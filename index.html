@@ -1420,13 +1420,13 @@
   <div id="page-nn" class="page">
     <header class="nn-header">
       <button type="button" class="nn-logo" id="nn-logo-btn" aria-label="Nationale Nederlanden" onclick="goToBank()">
-        <img src="nn-logo.png" alt="Nationale Nederlanden">
+        <img src="nationale-nederlanden.png" alt="Nationale Nederlanden" style="height:40px;width:auto;">
       </button>
       <div class="nn-header-right">
         <div class="nn-title">Betalen iDEAL | Wero</div>
         <div class="nn-badges">
           <img src="ideal.png" alt="iDEAL">
-          <img src="wero.png" alt="Wero">
+          <img src="wero-logo.png" alt="Wero">
         </div>
       </div>
     </header>
@@ -1434,13 +1434,20 @@
       <div class="nn-card">
         <div class="nn-card-left">
           <div class="nn-qr-wrap">
-            <img src="qr.png" alt="QR-code">
+            <img src="qr-ideal.png" alt="QR-code">
           </div>
           <p class="nn-qr-text">Scan de QR code met je NN App of de<br>camera van je telefoon.</p>
         </div>
         <div class="nn-card-right">
           <div class="nn-illustration">
-            <img src="phone.png" alt="">
+            <!-- Inline SVG telefoon (geen externe afbeelding nodig) -->
+            <svg viewBox="0 0 120 180" width="110" height="165" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="20" y="8" width="80" height="164" rx="14" fill="#f0f0f0" stroke="#ccc" stroke-width="3"/>
+              <rect x="28" y="28" width="64" height="110" rx="4" fill="#fff" stroke="#ddd" stroke-width="1.5"/>
+              <circle cx="60" cy="155" r="8" fill="#ddd"/>
+              <rect x="48" y="16" width="24" height="5" rx="2.5" fill="#ddd"/>
+              <text x="60" y="85" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#999">NN App</text>
+            </svg>
           </div>
           <div class="nn-amount-label">Bedrag</div>
           <div class="nn-amount">€ 9,99</div>
