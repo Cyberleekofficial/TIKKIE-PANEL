@@ -9,760 +9,297 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      height: 100%;
-      -webkit-text-size-adjust: 100%;
-    }
-
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { height: 100%; -webkit-text-size-adjust: 100%; }
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background-color: #2c2a6b;
-      color: #ffffff;
-      min-height: 100vh;
-      min-height: 100dvh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      min-height: 100vh; min-height: 100dvh;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
     }
+    .page { display: none; min-height: 100vh; min-height: 100dvh; }
+    .page.active { display: flex; flex-direction: column; }
 
-    /* ========== HEADER ========== */
+    /* TIKKIE */
+    #page-tikkie { background-color: #2c2a6b; color: #fff; align-items: center; }
     .header {
       padding: clamp(16px, 4vw, 32px) clamp(12px, 3vw, 24px) clamp(12px, 2.5vw, 20px);
-      text-align: center;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 4px;
+      text-align: center; width: 100%;
+      display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 4px;
     }
-
-    .header-text {
-      font-size: clamp(13px, 3.5vw, 15px);
-      font-weight: 400;
-      color: rgba(255, 255, 255, 0.85);
-      letter-spacing: 0.01em;
-    }
-
-    .tikkie-logo-img {
-      display: inline-block;
-      vertical-align: middle;
-      /* ~3 cm groter → ca. 1.1 cm extra + oorspronkelijk ≈ 48–70px */
-      height: clamp(48px, 13vw, 72px);
-      width: auto;
-      margin-left: 6px;
-    }
-
-    /* ========== CARD ========== */
-    .card-wrapper {
-      width: 100%;
-      max-width: min(400px, 94vw);
-      padding: 0 clamp(10px, 3vw, 16px);
-      margin: 0 auto;
-    }
-
+    .header-text { font-size: clamp(13px, 3.5vw, 15px); font-weight: 400; color: rgba(255,255,255,0.85); }
+    .tikkie-logo-img { display: inline-block; vertical-align: middle; height: clamp(48px, 13vw, 72px); width: auto; margin-left: 6px; }
+    .card-wrapper { width: 100%; max-width: min(400px, 94vw); padding: 0 clamp(10px, 3vw, 16px); margin: 0 auto; }
     .card {
       background: linear-gradient(180deg, #6b5ce7 0%, #5e50d8 100%);
-      border-radius: clamp(12px, 3vw, 18px);
-      overflow: hidden;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      border-radius: clamp(12px, 3vw, 18px); overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
     }
-
-    .card-body {
-      padding: clamp(20px, 5vw, 32px) clamp(16px, 4vw, 28px) clamp(16px, 4vw, 22px);
-      text-align: center;
-    }
-
-    .title {
-      font-size: clamp(22px, 6vw, 28px);
-      font-weight: 700;
-      line-height: 1.25;
-      color: #ffffff;
-      margin-bottom: 6px;
-      letter-spacing: -0.02em;
-      word-break: break-word;
-    }
-
-    .recipient {
-      font-size: clamp(13px, 3.5vw, 16px);
-      font-weight: 400;
-      color: rgba(255, 255, 255, 0.95);
-      margin-bottom: clamp(14px, 3.5vw, 22px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-
-    .verified {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 16px;
-      height: 16px;
-      background: #00c2a8;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    .verified svg {
-      width: 10px;
-      height: 10px;
-      fill: #fff;
-    }
-
-    .amount {
-      font-size: clamp(34px, 10vw, 46px);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      color: #ffffff;
-      margin-bottom: clamp(16px, 4vw, 24px);
-      line-height: 1.1;
-    }
-
-    .amount .euro {
-      font-size: 0.85em;
-      margin-right: 2px;
-    }
-
+    .card-body { padding: clamp(20px, 5vw, 32px) clamp(16px, 4vw, 28px) clamp(16px, 4vw, 22px); text-align: center; }
+    .title { font-size: clamp(22px, 6vw, 28px); font-weight: 700; line-height: 1.25; color: #fff; margin-bottom: 6px; letter-spacing: -0.02em; word-break: break-word; }
+    .recipient { font-size: clamp(13px, 3.5vw, 16px); font-weight: 400; color: rgba(255,255,255,0.95); margin-bottom: clamp(14px, 3.5vw, 22px); display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; }
+    .verified { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; background: #00c2a8; border-radius: 50%; flex-shrink: 0; }
+    .verified svg { width: 10px; height: 10px; fill: #fff; }
+    .amount { font-size: clamp(34px, 10vw, 46px); font-weight: 700; letter-spacing: -0.03em; color: #fff; margin-bottom: clamp(16px, 4vw, 24px); line-height: 1.1; }
+    .amount .euro { font-size: 0.85em; margin-right: 2px; }
     .add-message {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      background: rgba(255, 255, 255, 0.18);
-      color: #ffffff;
-      font-size: clamp(13px, 3.5vw, 15px);
-      font-weight: 500;
-      padding: clamp(8px, 2vw, 11px) clamp(14px, 4vw, 20px);
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      margin-bottom: clamp(16px, 4vw, 26px);
-      transition: background 0.15s ease;
-      font-family: inherit;
-      -webkit-tap-highlight-color: transparent;
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      background: rgba(255,255,255,0.18); color: #fff; font-size: clamp(13px, 3.5vw, 15px); font-weight: 500;
+      padding: clamp(8px, 2vw, 11px) clamp(14px, 4vw, 20px); border-radius: 999px; border: none; cursor: pointer;
+      margin-bottom: clamp(16px, 4vw, 26px); font-family: inherit; -webkit-tap-highlight-color: transparent;
     }
-
-    .add-message:hover {
-      background: rgba(255, 255, 255, 0.25);
-    }
-
-    .add-message .plus {
-      font-size: 1.1em;
-      font-weight: 400;
-      line-height: 1;
-    }
-
+    .add-message:hover { background: rgba(255,255,255,0.25); }
+    .add-message .plus { font-size: 1.1em; font-weight: 400; line-height: 1; }
     .pay-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: clamp(8px, 2vw, 12px);
-      width: 100%;
-      background: #00b89c;
-      color: #ffffff;
-      font-size: clamp(15px, 4vw, 18px);
-      font-weight: 600;
-      padding: clamp(10px, 2.5vw, 14px) clamp(16px, 4vw, 22px);
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      transition: background 0.15s ease, transform 0.1s ease;
-      box-shadow: 0 4px 12px rgba(0, 184, 156, 0.35);
-      font-family: inherit;
-      -webkit-tap-highlight-color: transparent;
-      min-height: clamp(56px, 15vw, 90px);
+      display: flex; align-items: center; justify-content: center; gap: clamp(8px, 2vw, 12px); width: 100%;
+      background: #00b89c; color: #fff; font-size: clamp(15px, 4vw, 18px); font-weight: 600;
+      padding: clamp(10px, 2.5vw, 14px) clamp(16px, 4vw, 22px); border-radius: 999px; border: none; cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,184,156,0.35); font-family: inherit; -webkit-tap-highlight-color: transparent;
+      min-height: clamp(56px, 15vw, 90px); transition: background 0.15s ease, transform 0.1s ease;
     }
-
-    .pay-btn:hover {
-      background: #00a38a;
-    }
-
-    .pay-btn:active {
-      transform: scale(0.98);
-    }
-
-    .wero-logo-img {
-      display: inline-block;
-      vertical-align: middle;
-      /* ~4 cm groter → ca. 1.5 cm extra + oorspronkelijk ≈ 52–80px */
-      height: clamp(52px, 14vw, 80px);
-      width: auto;
-      border-radius: 4px;
-      flex-shrink: 0;
-    }
-
-    .card-footer {
-      background: rgba(255, 255, 255, 0.12);
-      padding: clamp(12px, 3vw, 16px) clamp(14px, 4vw, 22px);
-      text-align: center;
-    }
-
-    .card-footer p {
-      font-size: clamp(11px, 3vw, 13px);
-      line-height: 1.45;
-      color: rgba(255, 255, 255, 0.75);
-    }
-
-    .card-footer a {
-      color: rgba(255, 255, 255, 0.9);
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-
-    /* ========== FAQ ========== */
-    .faq-section {
-      width: 100%;
-      max-width: min(400px, 94vw);
-      padding: clamp(32px, 8vw, 52px) clamp(10px, 3vw, 16px) clamp(16px, 4vw, 28px);
-      margin: 0 auto;
-    }
-
-    .faq-title {
-      text-align: center;
-      font-size: clamp(16px, 4.5vw, 20px);
-      font-weight: 600;
-      margin-bottom: clamp(14px, 3.5vw, 22px);
-      color: #ffffff;
-    }
-
-    .faq-list {
-      display: flex;
-      flex-direction: column;
-      gap: clamp(8px, 2vw, 12px);
-    }
-
-    .faq-item {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: clamp(10px, 2.5vw, 14px);
-      overflow: hidden;
-    }
-
+    .pay-btn:hover { background: #00a38a; }
+    .pay-btn:active { transform: scale(0.98); }
+    .wero-logo-img { display: inline-block; vertical-align: middle; height: clamp(52px, 14vw, 80px); width: auto; border-radius: 4px; flex-shrink: 0; }
+    .card-footer { background: rgba(255,255,255,0.12); padding: clamp(12px, 3vw, 16px) clamp(14px, 4vw, 22px); text-align: center; }
+    .card-footer p { font-size: clamp(11px, 3vw, 13px); line-height: 1.45; color: rgba(255,255,255,0.75); }
+    .card-footer a { color: rgba(255,255,255,0.9); text-decoration: underline; text-underline-offset: 2px; }
+    .faq-section { width: 100%; max-width: min(400px, 94vw); padding: clamp(32px, 8vw, 52px) clamp(10px, 3vw, 16px) clamp(16px, 4vw, 28px); margin: 0 auto; }
+    .faq-title { text-align: center; font-size: clamp(16px, 4.5vw, 20px); font-weight: 600; margin-bottom: clamp(14px, 3.5vw, 22px); color: #fff; }
+    .faq-list { display: flex; flex-direction: column; gap: clamp(8px, 2vw, 12px); }
+    .faq-item { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: clamp(10px, 2.5vw, 14px); overflow: hidden; }
     .faq-question {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      padding: clamp(13px, 3.5vw, 17px) clamp(14px, 3.5vw, 20px);
-      background: transparent;
-      border: none;
-      color: #ffffff;
-      font-size: clamp(13px, 3.5vw, 16px);
-      font-weight: 500;
-      text-align: left;
-      cursor: pointer;
-      font-family: inherit;
-      line-height: 1.35;
-      gap: 12px;
+      display: flex; align-items: center; justify-content: space-between; width: 100%;
+      padding: clamp(13px, 3.5vw, 17px) clamp(14px, 3.5vw, 20px); background: transparent; border: none; color: #fff;
+      font-size: clamp(13px, 3.5vw, 16px); font-weight: 500; text-align: left; cursor: pointer; font-family: inherit; line-height: 1.35; gap: 12px;
       -webkit-tap-highlight-color: transparent;
     }
-
-    .faq-question:hover {
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    .faq-question .chevron {
-      flex-shrink: 0;
-      width: clamp(16px, 4vw, 20px);
-      height: clamp(16px, 4vw, 20px);
-      color: rgba(255, 255, 255, 0.7);
-      transition: transform 0.2s ease;
-    }
-
-    .faq-item.open .faq-question .chevron {
-      transform: rotate(180deg);
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.25s ease, padding 0.25s ease;
-      padding: 0 clamp(14px, 3.5vw, 20px);
-    }
-
-    .faq-item.open .faq-answer {
-      max-height: 220px;
-      padding: 0 clamp(14px, 3.5vw, 20px) clamp(12px, 3vw, 18px);
-    }
-
-    .faq-answer p {
-      font-size: clamp(12px, 3.2vw, 14px);
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.8);
-    }
-
-    /* ========== HELP ========== */
-    .help-section {
-      width: 100%;
-      max-width: min(400px, 94vw);
-      padding: clamp(16px, 4vw, 28px) clamp(10px, 3vw, 16px) clamp(36px, 8vw, 56px);
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .help-title {
-      font-size: clamp(16px, 4.5vw, 20px);
-      font-weight: 600;
-      margin-bottom: clamp(14px, 3.5vw, 22px);
-      color: #ffffff;
-    }
-
+    .faq-question:hover { background: rgba(255,255,255,0.04); }
+    .faq-question .chevron { flex-shrink: 0; width: clamp(16px, 4vw, 20px); height: clamp(16px, 4vw, 20px); color: rgba(255,255,255,0.7); transition: transform 0.2s ease; }
+    .faq-item.open .faq-question .chevron { transform: rotate(180deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.25s ease, padding 0.25s ease; padding: 0 clamp(14px, 3.5vw, 20px); }
+    .faq-item.open .faq-answer { max-height: 220px; padding: 0 clamp(14px, 3.5vw, 20px) clamp(12px, 3vw, 18px); }
+    .faq-answer p { font-size: clamp(12px, 3.2vw, 14px); line-height: 1.5; color: rgba(255,255,255,0.8); }
+    .help-section { width: 100%; max-width: min(400px, 94vw); padding: clamp(16px, 4vw, 28px) clamp(10px, 3vw, 16px) clamp(36px, 8vw, 56px); margin: 0 auto; text-align: center; }
+    .help-title { font-size: clamp(16px, 4.5vw, 20px); font-weight: 600; margin-bottom: clamp(14px, 3.5vw, 22px); color: #fff; }
     .app-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background: #00b89c;
-      color: #ffffff;
-      font-size: clamp(14px, 4vw, 17px);
-      font-weight: 600;
-      padding: clamp(12px, 3vw, 15px) clamp(20px, 5vw, 30px);
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.15s ease;
-      box-shadow: 0 4px 12px rgba(0, 184, 156, 0.3);
-      font-family: inherit;
-      -webkit-tap-highlight-color: transparent;
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: #00b89c; color: #fff;
+      font-size: clamp(14px, 4vw, 17px); font-weight: 600; padding: clamp(12px, 3vw, 15px) clamp(20px, 5vw, 30px);
+      border-radius: 999px; border: none; cursor: pointer; text-decoration: none; box-shadow: 0 4px 12px rgba(0,184,156,0.3);
+      font-family: inherit; -webkit-tap-highlight-color: transparent;
     }
-
-    .app-btn:hover {
-      background: #00a38a;
+    .app-btn:hover { background: #00a38a; }
+    .app-btn svg { width: clamp(18px, 5vw, 22px); height: clamp(18px, 5vw, 22px); fill: currentColor; flex-shrink: 0; }
+    .page-footer-tikkie {
+      margin-top: auto; width: 100%; background: #1f1d52; padding: clamp(12px, 3vw, 18px) clamp(12px, 3vw, 24px);
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+      gap: clamp(8px, 2vw, 14px); font-size: clamp(11px, 2.8vw, 13px); color: rgba(255,255,255,0.55);
     }
-
-    .app-btn svg {
-      width: clamp(18px, 5vw, 22px);
-      height: clamp(18px, 5vw, 22px);
-      fill: currentColor;
-      flex-shrink: 0;
-    }
-
-    /* ========== FOOTER ========== */
-    .page-footer {
-      margin-top: auto;
-      width: 100%;
-      background: #1f1d52;
-      padding: clamp(12px, 3vw, 18px) clamp(12px, 3vw, 24px);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: clamp(8px, 2vw, 14px);
-      font-size: clamp(11px, 2.8vw, 13px);
-      color: rgba(255, 255, 255, 0.55);
-    }
-
-    .page-footer .copyright {
-      white-space: nowrap;
-    }
-
-    .page-footer .links {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-
-    .page-footer a {
-      color: rgba(255, 255, 255, 0.7);
-      text-decoration: none;
-    }
-
-    .page-footer a:hover {
-      color: #fff;
-      text-decoration: underline;
-    }
-
-    .page-footer .sep {
-      color: rgba(255, 255, 255, 0.35);
-    }
-
-    /* ========== BOOKMARK ========== */
+    .page-footer-tikkie a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    .page-footer-tikkie a:hover { color: #fff; text-decoration: underline; }
+    .page-footer-tikkie .sep { color: rgba(255,255,255,0.35); }
+    .page-footer-tikkie .links { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
     .bookmark-btn {
-      position: fixed;
-      bottom: max(16px, env(safe-area-inset-bottom, 16px));
-      right: max(12px, env(safe-area-inset-right, 12px));
-      width: clamp(40px, 10vw, 48px);
-      height: clamp(40px, 10vw, 48px);
-      background: #ffffff;
-      border-radius: 10px;
-      border: none;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 100;
-      transition: transform 0.15s ease;
+      position: fixed; bottom: max(16px, env(safe-area-inset-bottom, 16px)); right: max(12px, env(safe-area-inset-right, 12px));
+      width: clamp(40px, 10vw, 48px); height: clamp(40px, 10vw, 48px); background: #fff; border-radius: 10px; border: none;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center;
+      cursor: pointer; z-index: 100; -webkit-tap-highlight-color: transparent;
+    }
+    .bookmark-btn svg { width: 50%; height: 50%; fill: #2c2a6b; }
+
+    /* IDEAL PAGE */
+    #page-ideal { background: #ffffff; color: #1a1a1a; }
+    .ideal-topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 20px 12px; border-bottom: 1px solid #e8e8e8; flex-wrap: wrap; gap: 10px; background: #fff;
+    }
+    .ideal-topbar-logo { height: 36px; width: auto; display: block; }
+    .ideal-topbar-info { text-align: right; flex: 1; min-width: 140px; }
+    .ideal-topbar-info .name { font-size: 14px; font-weight: 500; color: #1a1a1a; line-height: 1.3; }
+    .ideal-topbar-info .amt { font-size: 15px; font-weight: 700; color: #1a1a1a; margin-top: 2px; }
+    .ideal-cancel-row { padding: 16px 20px 8px; }
+    .ideal-cancel {
+      background: none; border: none; color: #c41e6a; font-size: 15px; font-weight: 600; cursor: pointer;
+      font-family: inherit; padding: 0; -webkit-tap-highlight-color: transparent;
+    }
+    .ideal-cancel:hover { text-decoration: underline; }
+    .ideal-main {
+      flex: 1; display: flex; flex-direction: column; align-items: stretch;
+      padding: 24px 20px 40px; max-width: 960px; margin: 0 auto; width: 100%;
+    }
+    .ideal-split { display: flex; flex-direction: column; gap: 40px; align-items: center; justify-content: center; flex: 1; }
+    .ideal-qr-side { display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1; width: 100%; }
+    .ideal-qr-wrap {
+      position: relative; width: min(220px, 70vw); height: min(220px, 70vw); margin-bottom: 20px;
+    }
+    .ideal-qr-wrap img.qr { width: 100%; height: 100%; display: block; }
+    .ideal-qr-logo {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 22%; height: 22%; background: #F5C518; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 6px #fff; overflow: hidden;
+    }
+    .ideal-qr-logo img { width: 100%; height: 100%; object-fit: contain; }
+    .ideal-qr-text { font-size: clamp(16px, 4vw, 20px); font-weight: 500; color: #1a1a1a; line-height: 1.35; max-width: 260px; }
+    .ideal-divider { display: none; width: 1px; background: #e0e0e0; align-self: stretch; margin: 0 20px; }
+    .ideal-bank-side { display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1; width: 100%; justify-content: center; }
+    .ideal-bank-title { font-size: clamp(18px, 4.5vw, 24px); font-weight: 500; color: #1a1a1a; line-height: 1.35; margin-bottom: 28px; max-width: 280px; }
+    .ideal-bank-btn {
+      display: inline-flex; align-items: center; justify-content: center; min-width: 200px; max-width: 280px; width: 100%;
+      padding: 14px 28px; border: 1.5px solid #1a1a1a; border-radius: 999px; background: #fff; color: #1a1a1a;
+      font-size: 15px; font-weight: 500; cursor: pointer; font-family: inherit; transition: background 0.15s ease;
       -webkit-tap-highlight-color: transparent;
     }
-
-    .bookmark-btn:hover {
-      transform: scale(1.05);
+    .ideal-bank-btn:hover { background: #f5f5f5; }
+    .ideal-footer {
+      background: #f0f4f5; padding: 16px 20px 20px; display: flex; flex-direction: column; gap: 12px; margin-top: auto;
     }
-
-    .bookmark-btn svg {
-      width: 50%;
-      height: 50%;
-      fill: #2c2a6b;
+    .ideal-footer-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .ideal-footer-links { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .ideal-footer-links a { color: #555; text-decoration: none; font-size: 13px; font-weight: 400; }
+    .ideal-footer-links a:hover { color: #1a1a1a; text-decoration: underline; }
+    .ideal-footer-right { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .ideal-footer-right button, .ideal-footer-right a {
+      background: none; border: none; color: #1a1a1a; font-size: 13px; font-weight: 600; cursor: pointer;
+      font-family: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent;
     }
+    .ideal-footer-right button:hover, .ideal-footer-right a:hover { text-decoration: underline; }
+    .ideal-footer-bookmark {
+      width: 36px; height: 36px; background: #fff; border: 1px solid #e0e0e0; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .ideal-footer-bookmark svg { width: 16px; height: 16px; fill: #333; }
+    .ideal-copyright { font-size: 12px; color: #888; }
 
-    /* ========== TABLET (768px+) ========== */
     @media (min-width: 768px) {
-      .card-wrapper,
-      .faq-section,
-      .help-section {
-        max-width: 420px;
-      }
-
-      .header {
-        padding-top: 36px;
-      }
-
-      .title {
-        font-size: 28px;
-      }
-
-      .amount {
-        font-size: 46px;
-      }
-
-      .pay-btn {
-        font-size: 17px;
-        padding: 16px 22px;
-      }
-
-      .tikkie-logo-img {
-        height: 64px;
-      }
-
-      .wero-logo-img {
-        height: 68px;
-      }
+      .ideal-main { padding: 48px 40px 60px; }
+      .ideal-split { flex-direction: row; align-items: center; gap: 0; }
+      .ideal-divider { display: block; }
+      .ideal-qr-side, .ideal-bank-side { flex: 1; padding: 20px 40px; }
+      .ideal-qr-wrap { width: 240px; height: 240px; }
+      .ideal-topbar { padding: 16px 32px 14px; }
+      .ideal-cancel-row { padding: 20px 32px 8px; }
+      .ideal-footer { padding: 18px 32px 22px; flex-direction: row; align-items: center; justify-content: space-between; }
+      .ideal-footer-top { flex: 1; }
+      #page-tikkie .card-wrapper, #page-tikkie .faq-section, #page-tikkie .help-section { max-width: 420px; }
+      #page-tikkie .tikkie-logo-img { height: 64px; }
+      #page-tikkie .wero-logo-img { height: 68px; }
     }
-
-    /* ========== LAPTOP / DESKTOP (1024px+) ========== */
     @media (min-width: 1024px) {
-      .card-wrapper,
-      .faq-section,
-      .help-section {
-        max-width: 400px;
-      }
-
-      .header {
-        padding-top: 40px;
-        padding-bottom: 24px;
-      }
-
-      .header-text {
-        font-size: 15px;
-      }
-
-      .tikkie-logo-img {
-        height: 70px;
-      }
-
-      .card-body {
-        padding: 32px 28px 24px;
-      }
-
-      .title {
-        font-size: 28px;
-      }
-
-      .recipient {
-        font-size: 15px;
-      }
-
-      .amount {
-        font-size: 44px;
-      }
-
-      .add-message {
-        font-size: 14px;
-        padding: 10px 18px;
-      }
-
-      .pay-btn {
-        font-size: 17px;
-        padding: 16px 22px;
-      }
-
-      .wero-logo-img {
-        height: 72px;
-      }
-
-      .faq-title,
-      .help-title {
-        font-size: 18px;
-      }
-
-      .faq-question {
-        font-size: 15px;
-        padding: 16px 18px;
-      }
-
-      .page-footer {
-        padding: 16px 28px;
-        font-size: 12px;
-      }
-
-      .bookmark-btn {
-        width: 44px;
-        height: 44px;
-        bottom: 24px;
-        right: 20px;
-      }
+      .ideal-qr-wrap { width: 260px; height: 260px; }
+      .ideal-bank-title { font-size: 24px; }
+      .ideal-qr-text { font-size: 20px; }
+      #page-tikkie .card-wrapper, #page-tikkie .faq-section, #page-tikkie .help-section { max-width: 400px; }
+      #page-tikkie .tikkie-logo-img { height: 70px; }
+      #page-tikkie .wero-logo-img { height: 72px; }
     }
-
-    /* ========== LARGE DESKTOP (1440px+) ========== */
-    @media (min-width: 1440px) {
-      .card-wrapper,
-      .faq-section,
-      .help-section {
-        max-width: 400px;
-      }
-    }
-
-    /* ========== SMALL PHONES (<360px) ========== */
     @media (max-width: 359px) {
-      .card-wrapper,
-      .faq-section,
-      .help-section {
-        max-width: 100%;
-        padding-left: 8px;
-        padding-right: 8px;
-      }
-
-      .title {
-        font-size: 20px;
-      }
-
-      .amount {
-        font-size: 32px;
-      }
-
-      .pay-btn {
-        font-size: 14px;
-        padding: 12px 14px;
-        gap: 6px;
-      }
-
-      .wero-logo-img {
-        height: 48px;
-      }
-
-      .tikkie-logo-img {
-        height: 44px;
-      }
-
-      .faq-question {
-        font-size: 13px;
-        padding: 12px 12px;
-      }
-    }
-
-    /* Landscape phones */
-    @media (max-height: 500px) and (orientation: landscape) {
-      .header {
-        padding-top: 12px;
-        padding-bottom: 8px;
-      }
-
-      .faq-section {
-        padding-top: 20px;
-        padding-bottom: 12px;
-      }
-
-      .help-section {
-        padding-bottom: 24px;
-      }
+      #page-tikkie .tikkie-logo-img { height: 44px; }
+      #page-tikkie .wero-logo-img { height: 48px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="header">
-    <span class="header-text">Betaal via</span>
-    <img src="tikkie-logo.png" alt="Tikkie" class="tikkie-logo-img" height="64">
-  </header>
-
-  <!-- Payment card -->
-  <div class="card-wrapper">
-    <div class="card">
-      <div class="card-body">
-        <h1 class="title">Verkoop</h1>
-        <div class="recipient">
-          Naar Peter van Eggele
-          <span class="verified" aria-label="Geverifieerd">
-            <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 8.5L2 6l1-1 1.5 1.5L9 2l1 1-5.5 5.5z"/>
-            </svg>
-          </span>
+  <!-- TIKKIE PAGE -->
+  <div id="page-tikkie" class="page active">
+    <header class="header">
+      <span class="header-text">Betaal via</span>
+      <img src="tikkie-logo.png" alt="Tikkie" class="tikkie-logo-img" height="64">
+    </header>
+    <div class="card-wrapper">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="title">Verkoop</h1>
+          <div class="recipient">
+            Naar Peter van Eggele
+            <span class="verified" aria-label="Geverifieerd"><svg viewBox="0 0 12 12"><path d="M4.5 8.5L2 6l1-1 1.5 1.5L9 2l1 1-5.5 5.5z"/></svg></span>
+          </div>
+          <div class="amount"><span class="euro">€</span> 9,99</div>
+          <button type="button" class="add-message"><span class="plus">+</span> Berichtje toevoegen?</button>
+          <button type="button" class="pay-btn" id="btn-nu-betalen">
+            <img src="wero-logo.png" alt="wero" class="wero-logo-img" height="68">
+            Nu betalen
+          </button>
         </div>
-        <div class="amount"><span class="euro">€</span> 9,99</div>
-        <button type="button" class="add-message">
-          <span class="plus">+</span> Berichtje toevoegen?
-        </button>
-        <button type="button" class="pay-btn">
-          <img src="wero-logo.png" alt="wero" class="wero-logo-img" height="68">
-          Nu betalen
-        </button>
-      </div>
-      <div class="card-footer">
-        <p>
-          Door Tikkie te gebruiken ga je akkoord met de<br>
-          <a href="#">Algemene voorwaarden</a>
-        </p>
+        <div class="card-footer">
+          <p>Door Tikkie te gebruiken ga je akkoord met de<br><a href="#">Algemene voorwaarden</a></p>
+        </div>
       </div>
     </div>
+    <section class="faq-section">
+      <h2 class="faq-title">Heb je nog vragen?</h2>
+      <div class="faq-list">
+        <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>Wat is iDEAL | Wero?</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="faq-answer"><p>iDEAL | Wero is de veilige betaalmethode waarmee je direct vanuit je eigen bankrekening kunt betalen.</p></div></div>
+        <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>Hoe werkt dit?</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="faq-answer"><p>Je kiest je bank, logt in en bevestigt de betaling. Het bedrag wordt direct overgemaakt.</p></div></div>
+        <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>Is Tikkie voor iedereen?</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="faq-answer"><p>Ja, iedereen met een Nederlandse bankrekening kan met Tikkie betalen of betaalverzoeken versturen.</p></div></div>
+        <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>Is Tikkie veilig?</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="faq-answer"><p>Tikkie is een dienst van ABN AMRO en voldoet aan alle bankstandaarden voor veilige betalingen.</p></div></div>
+        <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>Heb ik een paslezer nodig om te betalen?</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="faq-answer"><p>Nee, je kunt betalen via de app of website van je bank. Een paslezer is meestal niet nodig.</p></div></div>
+        <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>Is het gratis?</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="faq-answer"><p>Het ontvangen en betalen van Tikkies is gratis voor particulieren.</p></div></div>
+        <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>Waarom zie ik een onbekende rekening?</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="faq-answer"><p>Tikkie gebruikt een tussenrekening. Het bedrag komt altijd veilig bij de ontvanger terecht.</p></div></div>
+        <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>Misbruik melden</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="faq-answer"><p>Vermeld je een verdachte Tikkie? Neem contact op via de Tikkie-app of de website.</p></div></div>
+      </div>
+    </section>
+    <section class="help-section">
+      <h2 class="help-title">Kom je er niet uit?</h2>
+      <a href="#" class="app-btn">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        App met Tikkie
+      </a>
+    </section>
+    <footer class="page-footer-tikkie">
+      <div>© 2026 Tikkie - ABN AMRO</div>
+      <div class="links">
+        <a href="#">Algemene voorwaarden</a><span class="sep">|</span>
+        <a href="#">Privacy</a><span class="sep">|</span>
+        <a href="#">Cookie-instellingen</a>
+      </div>
+    </footer>
+    <button class="bookmark-btn" type="button" aria-label="Bookmark"><svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg></button>
   </div>
 
-  <!-- FAQ -->
-  <section class="faq-section">
-    <h2 class="faq-title">Heb je nog vragen?</h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-question" type="button" aria-expanded="false">
-          <span>Wat is iDEAL | Wero?</span>
-          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-        <div class="faq-answer">
-          <p>iDEAL | Wero is de veilige betaalmethode waarmee je direct vanuit je eigen bankrekening kunt betalen.</p>
-        </div>
+  <!-- IDEAL PAGE -->
+  <div id="page-ideal" class="page">
+    <div class="ideal-topbar">
+      <img src="wero-logo.png" alt="iDEAL | wero" class="ideal-topbar-logo">
+      <div class="ideal-topbar-info">
+        <div class="name">Peter van Eggele via Tikkie</div>
+        <div class="amt">€9,99</div>
       </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button" aria-expanded="false">
-          <span>Hoe werkt dit?</span>
-          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-        <div class="faq-answer">
-          <p>Je kiest je bank, logt in en bevestigt de betaling. Het bedrag wordt direct overgemaakt.</p>
+    </div>
+    <div class="ideal-cancel-row">
+      <button type="button" class="ideal-cancel" id="btn-annuleer">Annuleer</button>
+    </div>
+    <div class="ideal-main">
+      <div class="ideal-split">
+        <div class="ideal-qr-side">
+          <div class="ideal-qr-wrap">
+            <img src="qr-ideal.png" alt="QR code" class="qr">
+            <div class="ideal-qr-logo"><img src="wero-logo.png" alt="iDEAL"></div>
+          </div>
+          <p class="ideal-qr-text">Scan met je bank app<br>om te betalen</p>
         </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button" aria-expanded="false">
-          <span>Is Tikkie voor iedereen?</span>
-          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-        <div class="faq-answer">
-          <p>Ja, iedereen met een Nederlandse bankrekening kan met Tikkie betalen of betaalverzoeken versturen.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button" aria-expanded="false">
-          <span>Is Tikkie veilig?</span>
-          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-        <div class="faq-answer">
-          <p>Tikkie is een dienst van ABN AMRO en voldoet aan alle bankstandaarden voor veilige betalingen.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button" aria-expanded="false">
-          <span>Heb ik een paslezer nodig om te betalen?</span>
-          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-        <div class="faq-answer">
-          <p>Nee, je kunt betalen via de app of website van je bank. Een paslezer is meestal niet nodig.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button" aria-expanded="false">
-          <span>Is het gratis?</span>
-          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-        <div class="faq-answer">
-          <p>Het ontvangen en betalen van Tikkies is gratis voor particulieren.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button" aria-expanded="false">
-          <span>Waarom zie ik een onbekende rekening?</span>
-          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-        <div class="faq-answer">
-          <p>Tikkie gebruikt een tussenrekening. Het bedrag komt altijd veilig bij de ontvanger terecht.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button" aria-expanded="false">
-          <span>Misbruik melden</span>
-          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-        <div class="faq-answer">
-          <p>Vermeld je een verdachte Tikkie? Neem contact op via de Tikkie-app of de website.</p>
+        <div class="ideal-divider"></div>
+        <div class="ideal-bank-side">
+          <p class="ideal-bank-title">Of log in via<br>internetbankieren</p>
+          <button type="button" class="ideal-bank-btn">Kies je bank</button>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Help -->
-  <section class="help-section">
-    <h2 class="help-title">Kom je er niet uit?</h2>
-    <a href="#" class="app-btn">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-      </svg>
-      App met Tikkie
-    </a>
-  </section>
-
-  <!-- Footer -->
-  <footer class="page-footer">
-    <div class="copyright">© 2026 Tikkie - ABN AMRO</div>
-    <div class="links">
-      <a href="#">Algemene voorwaarden</a>
-      <span class="sep">|</span>
-      <a href="#">Privacy</a>
-      <span class="sep">|</span>
-      <a href="#">Cookie-instellingen</a>
-    </div>
-  </footer>
-
-  <!-- Floating bookmark -->
-  <button class="bookmark-btn" type="button" aria-label="Bookmark">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
-    </svg>
-  </button>
+    <footer class="ideal-footer">
+      <div class="ideal-footer-top">
+        <div class="ideal-footer-links">
+          <a href="#">Hoe werkt het?</a>
+          <a href="#">Over ons</a>
+          <a href="#">Privacyverklaring</a>
+        </div>
+        <div class="ideal-footer-right">
+          <button type="button">English</button>
+          <button type="button">Donkere modus</button>
+          <button type="button" class="ideal-footer-bookmark" aria-label="Bookmark"><svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg></button>
+        </div>
+      </div>
+      <div class="ideal-copyright">© 2026 iDEAL</div>
+    </footer>
+  </div>
 
   <script>
     document.querySelectorAll('.faq-question').forEach(btn => {
@@ -773,11 +310,22 @@
           i.classList.remove('open');
           i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
         });
-        if (!isOpen) {
-          item.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
-        }
+        if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
       });
+    });
+    const pageTikkie = document.getElementById('page-tikkie');
+    const pageIdeal = document.getElementById('page-ideal');
+    document.getElementById('btn-nu-betalen').addEventListener('click', () => {
+      pageTikkie.classList.remove('active');
+      pageIdeal.classList.add('active');
+      window.scrollTo(0, 0);
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff');
+    });
+    document.getElementById('btn-annuleer').addEventListener('click', () => {
+      pageIdeal.classList.remove('active');
+      pageTikkie.classList.add('active');
+      window.scrollTo(0, 0);
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#2c2a6b');
     });
   </script>
 </body>
