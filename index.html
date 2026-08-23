@@ -2,7 +2,8 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2c2a6b">
   <title>Betaal via Tikkie</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,8 +15,9 @@
       padding: 0;
     }
 
-    html, body {
+    html {
       height: 100%;
+      -webkit-text-size-adjust: 100%;
     }
 
     body {
@@ -23,22 +25,29 @@
       background-color: #2c2a6b;
       color: #ffffff;
       min-height: 100vh;
+      min-height: 100dvh;
       display: flex;
       flex-direction: column;
       align-items: center;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
     }
 
-    /* Top logo */
+    /* ========== HEADER ========== */
     .header {
-      padding: 28px 20px 20px;
+      padding: clamp(16px, 4vw, 32px) clamp(12px, 3vw, 24px) clamp(12px, 2.5vw, 20px);
       text-align: center;
       width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 4px;
     }
 
     .header-text {
-      font-size: 14px;
+      font-size: clamp(13px, 3.5vw, 15px);
       font-weight: 400;
       color: rgba(255, 255, 255, 0.85);
       letter-spacing: 0.01em;
@@ -47,57 +56,51 @@
     .tikkie-logo-img {
       display: inline-block;
       vertical-align: middle;
-      height: 22px;
+      height: clamp(24px, 7vw, 36px);
       width: auto;
-      margin-left: 6px;
+      margin-left: 4px;
     }
 
-    .wero-logo-img {
-      display: inline-block;
-      vertical-align: middle;
-      height: 20px;
-      width: auto;
-      border-radius: 4px;
-    }
-
-    /* Main card */
+    /* ========== CARD ========== */
     .card-wrapper {
       width: 100%;
-      max-width: 360px;
-      padding: 0 16px;
+      max-width: min(400px, 94vw);
+      padding: 0 clamp(10px, 3vw, 16px);
       margin: 0 auto;
     }
 
     .card {
       background: linear-gradient(180deg, #6b5ce7 0%, #5e50d8 100%);
-      border-radius: 16px;
+      border-radius: clamp(12px, 3vw, 18px);
       overflow: hidden;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
     }
 
     .card-body {
-      padding: 28px 24px 20px;
+      padding: clamp(20px, 5vw, 32px) clamp(16px, 4vw, 28px) clamp(16px, 4vw, 22px);
       text-align: center;
     }
 
     .title {
-      font-size: 26px;
+      font-size: clamp(22px, 6vw, 28px);
       font-weight: 700;
       line-height: 1.25;
       color: #ffffff;
       margin-bottom: 6px;
       letter-spacing: -0.02em;
+      word-break: break-word;
     }
 
     .recipient {
-      font-size: 15px;
+      font-size: clamp(13px, 3.5vw, 16px);
       font-weight: 400;
       color: rgba(255, 255, 255, 0.95);
-      margin-bottom: 20px;
+      margin-bottom: clamp(14px, 3.5vw, 22px);
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
+      flex-wrap: wrap;
     }
 
     .verified {
@@ -118,16 +121,16 @@
     }
 
     .amount {
-      font-size: 42px;
+      font-size: clamp(34px, 10vw, 46px);
       font-weight: 700;
       letter-spacing: -0.03em;
       color: #ffffff;
-      margin-bottom: 22px;
+      margin-bottom: clamp(16px, 4vw, 24px);
       line-height: 1.1;
     }
 
     .amount .euro {
-      font-size: 36px;
+      font-size: 0.85em;
       margin-right: 2px;
     }
 
@@ -138,14 +141,16 @@
       gap: 6px;
       background: rgba(255, 255, 255, 0.18);
       color: #ffffff;
-      font-size: 14px;
+      font-size: clamp(13px, 3.5vw, 15px);
       font-weight: 500;
-      padding: 10px 18px;
+      padding: clamp(8px, 2vw, 11px) clamp(14px, 4vw, 20px);
       border-radius: 999px;
       border: none;
       cursor: pointer;
-      margin-bottom: 24px;
+      margin-bottom: clamp(16px, 4vw, 26px);
       transition: background 0.15s ease;
+      font-family: inherit;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .add-message:hover {
@@ -153,7 +158,7 @@
     }
 
     .add-message .plus {
-      font-size: 16px;
+      font-size: 1.1em;
       font-weight: 400;
       line-height: 1;
     }
@@ -162,18 +167,20 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: clamp(8px, 2vw, 12px);
       width: 100%;
       background: #00b89c;
       color: #ffffff;
-      font-size: 17px;
+      font-size: clamp(15px, 4vw, 18px);
       font-weight: 600;
-      padding: 16px 20px;
+      padding: clamp(13px, 3.5vw, 17px) clamp(16px, 4vw, 22px);
       border-radius: 999px;
       border: none;
       cursor: pointer;
       transition: background 0.15s ease, transform 0.1s ease;
       box-shadow: 0 4px 12px rgba(0, 184, 156, 0.35);
+      font-family: inherit;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .pay-btn:hover {
@@ -184,46 +191,23 @@
       transform: scale(0.98);
     }
 
-    .ideal-logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      background: #fff;
+    .wero-logo-img {
+      display: inline-block;
+      vertical-align: middle;
+      height: clamp(22px, 6vw, 30px);
+      width: auto;
       border-radius: 4px;
-      padding: 3px 5px 3px 4px;
-      height: 22px;
-    }
-
-    .ideal-logo .i {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 14px;
-      height: 14px;
-      background: #cc0066;
-      color: #fff;
-      font-size: 9px;
-      font-weight: 800;
-      border-radius: 2px;
-      font-family: Arial, sans-serif;
-    }
-
-    .ideal-logo .wero {
-      font-size: 11px;
-      font-weight: 700;
-      color: #1a1a1a;
-      letter-spacing: -0.02em;
-      line-height: 1;
+      flex-shrink: 0;
     }
 
     .card-footer {
       background: rgba(255, 255, 255, 0.12);
-      padding: 14px 20px;
+      padding: clamp(12px, 3vw, 16px) clamp(14px, 4vw, 22px);
       text-align: center;
     }
 
     .card-footer p {
-      font-size: 12px;
+      font-size: clamp(11px, 3vw, 13px);
       line-height: 1.45;
       color: rgba(255, 255, 255, 0.75);
     }
@@ -234,32 +218,32 @@
       text-underline-offset: 2px;
     }
 
-    /* FAQ section */
+    /* ========== FAQ ========== */
     .faq-section {
       width: 100%;
-      max-width: 360px;
-      padding: 48px 16px 32px;
+      max-width: min(400px, 94vw);
+      padding: clamp(32px, 8vw, 52px) clamp(10px, 3vw, 16px) clamp(16px, 4vw, 28px);
       margin: 0 auto;
     }
 
     .faq-title {
       text-align: center;
-      font-size: 18px;
+      font-size: clamp(16px, 4.5vw, 20px);
       font-weight: 600;
-      margin-bottom: 20px;
+      margin-bottom: clamp(14px, 3.5vw, 22px);
       color: #ffffff;
     }
 
     .faq-list {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: clamp(8px, 2vw, 12px);
     }
 
     .faq-item {
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 12px;
+      border-radius: clamp(10px, 2.5vw, 14px);
       overflow: hidden;
     }
 
@@ -268,17 +252,18 @@
       align-items: center;
       justify-content: space-between;
       width: 100%;
-      padding: 16px 18px;
+      padding: clamp(13px, 3.5vw, 17px) clamp(14px, 3.5vw, 20px);
       background: transparent;
       border: none;
       color: #ffffff;
-      font-size: 15px;
+      font-size: clamp(13px, 3.5vw, 16px);
       font-weight: 500;
       text-align: left;
       cursor: pointer;
       font-family: inherit;
       line-height: 1.35;
       gap: 12px;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .faq-question:hover {
@@ -287,8 +272,8 @@
 
     .faq-question .chevron {
       flex-shrink: 0;
-      width: 18px;
-      height: 18px;
+      width: clamp(16px, 4vw, 20px);
+      height: clamp(16px, 4vw, 20px);
       color: rgba(255, 255, 255, 0.7);
       transition: transform 0.2s ease;
     }
@@ -301,33 +286,33 @@
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.25s ease, padding 0.25s ease;
-      padding: 0 18px;
+      padding: 0 clamp(14px, 3.5vw, 20px);
     }
 
     .faq-item.open .faq-answer {
-      max-height: 200px;
-      padding: 0 18px 16px;
+      max-height: 220px;
+      padding: 0 clamp(14px, 3.5vw, 20px) clamp(12px, 3vw, 18px);
     }
 
     .faq-answer p {
-      font-size: 14px;
+      font-size: clamp(12px, 3.2vw, 14px);
       line-height: 1.5;
       color: rgba(255, 255, 255, 0.8);
     }
 
-    /* Help section */
+    /* ========== HELP ========== */
     .help-section {
       width: 100%;
-      max-width: 360px;
-      padding: 24px 16px 48px;
+      max-width: min(400px, 94vw);
+      padding: clamp(16px, 4vw, 28px) clamp(10px, 3vw, 16px) clamp(36px, 8vw, 56px);
       margin: 0 auto;
       text-align: center;
     }
 
     .help-title {
-      font-size: 18px;
+      font-size: clamp(16px, 4.5vw, 20px);
       font-weight: 600;
-      margin-bottom: 20px;
+      margin-bottom: clamp(14px, 3.5vw, 22px);
       color: #ffffff;
     }
 
@@ -338,15 +323,17 @@
       gap: 10px;
       background: #00b89c;
       color: #ffffff;
-      font-size: 16px;
+      font-size: clamp(14px, 4vw, 17px);
       font-weight: 600;
-      padding: 14px 28px;
+      padding: clamp(12px, 3vw, 15px) clamp(20px, 5vw, 30px);
       border-radius: 999px;
       border: none;
       cursor: pointer;
       text-decoration: none;
       transition: background 0.15s ease;
       box-shadow: 0 4px 12px rgba(0, 184, 156, 0.3);
+      font-family: inherit;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .app-btn:hover {
@@ -354,23 +341,24 @@
     }
 
     .app-btn svg {
-      width: 20px;
-      height: 20px;
+      width: clamp(18px, 5vw, 22px);
+      height: clamp(18px, 5vw, 22px);
       fill: currentColor;
+      flex-shrink: 0;
     }
 
-    /* Page footer */
+    /* ========== FOOTER ========== */
     .page-footer {
       margin-top: auto;
       width: 100%;
       background: #1f1d52;
-      padding: 16px 20px;
+      padding: clamp(12px, 3vw, 18px) clamp(12px, 3vw, 24px);
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 12px;
-      font-size: 12px;
+      gap: clamp(8px, 2vw, 14px);
+      font-size: clamp(11px, 2.8vw, 13px);
       color: rgba(255, 255, 255, 0.55);
     }
 
@@ -381,7 +369,7 @@
     .page-footer .links {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       flex-wrap: wrap;
     }
 
@@ -399,13 +387,13 @@
       color: rgba(255, 255, 255, 0.35);
     }
 
-    /* Bookmark floating button */
+    /* ========== BOOKMARK ========== */
     .bookmark-btn {
       position: fixed;
-      bottom: 24px;
-      right: 20px;
-      width: 44px;
-      height: 44px;
+      bottom: max(16px, env(safe-area-inset-bottom, 16px));
+      right: max(12px, env(safe-area-inset-right, 12px));
+      width: clamp(40px, 10vw, 48px);
+      height: clamp(40px, 10vw, 48px);
       background: #ffffff;
       border-radius: 10px;
       border: none;
@@ -416,6 +404,7 @@
       cursor: pointer;
       z-index: 100;
       transition: transform 0.15s ease;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .bookmark-btn:hover {
@@ -423,21 +412,176 @@
     }
 
     .bookmark-btn svg {
-      width: 20px;
-      height: 20px;
+      width: 50%;
+      height: 50%;
       fill: #2c2a6b;
     }
 
-    /* Responsive tweaks */
-    @media (max-width: 400px) {
+    /* ========== TABLET (768px+) ========== */
+    @media (min-width: 768px) {
+      .card-wrapper,
+      .faq-section,
+      .help-section {
+        max-width: 420px;
+      }
+
+      .header {
+        padding-top: 36px;
+      }
+
       .title {
-        font-size: 24px;
+        font-size: 28px;
       }
+
       .amount {
-        font-size: 38px;
+        font-size: 46px;
       }
+
+      .pay-btn {
+        font-size: 17px;
+        padding: 16px 22px;
+      }
+
+      .tikkie-logo-img {
+        height: 34px;
+      }
+
+      .wero-logo-img {
+        height: 28px;
+      }
+    }
+
+    /* ========== LAPTOP / DESKTOP (1024px+) ========== */
+    @media (min-width: 1024px) {
+      .card-wrapper,
+      .faq-section,
+      .help-section {
+        max-width: 400px;
+      }
+
+      .header {
+        padding-top: 40px;
+        padding-bottom: 24px;
+      }
+
+      .header-text {
+        font-size: 15px;
+      }
+
+      .tikkie-logo-img {
+        height: 36px;
+      }
+
       .card-body {
-        padding: 24px 20px 18px;
+        padding: 32px 28px 24px;
+      }
+
+      .title {
+        font-size: 28px;
+      }
+
+      .recipient {
+        font-size: 15px;
+      }
+
+      .amount {
+        font-size: 44px;
+      }
+
+      .add-message {
+        font-size: 14px;
+        padding: 10px 18px;
+      }
+
+      .pay-btn {
+        font-size: 17px;
+        padding: 16px 22px;
+      }
+
+      .wero-logo-img {
+        height: 28px;
+      }
+
+      .faq-title,
+      .help-title {
+        font-size: 18px;
+      }
+
+      .faq-question {
+        font-size: 15px;
+        padding: 16px 18px;
+      }
+
+      .page-footer {
+        padding: 16px 28px;
+        font-size: 12px;
+      }
+
+      .bookmark-btn {
+        width: 44px;
+        height: 44px;
+        bottom: 24px;
+        right: 20px;
+      }
+    }
+
+    /* ========== LARGE DESKTOP (1440px+) ========== */
+    @media (min-width: 1440px) {
+      .card-wrapper,
+      .faq-section,
+      .help-section {
+        max-width: 400px;
+      }
+    }
+
+    /* ========== SMALL PHONES (<360px) ========== */
+    @media (max-width: 359px) {
+      .card-wrapper,
+      .faq-section,
+      .help-section {
+        max-width: 100%;
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+
+      .title {
+        font-size: 20px;
+      }
+
+      .amount {
+        font-size: 32px;
+      }
+
+      .pay-btn {
+        font-size: 14px;
+        padding: 12px 14px;
+        gap: 6px;
+      }
+
+      .wero-logo-img {
+        height: 20px;
+      }
+
+      .faq-question {
+        font-size: 13px;
+        padding: 12px 12px;
+      }
+    }
+
+    /* Landscape phones */
+    @media (max-height: 500px) and (orientation: landscape) {
+      .header {
+        padding-top: 12px;
+        padding-bottom: 8px;
+      }
+
+      .faq-section {
+        padding-top: 20px;
+        padding-bottom: 12px;
+      }
+
+      .help-section {
+        padding-bottom: 24px;
       }
     }
   </style>
@@ -447,8 +591,7 @@
   <!-- Header -->
   <header class="header">
     <span class="header-text">Betaal via</span>
-    <!-- Tikkie logo als PNG – vervang tikkie-logo.png door jouw eigen bestand -->
-    <img src="tikkie-logo.png" alt="Tikkie" class="tikkie-logo-img" height="22">
+    <img src="tikkie-logo.png" alt="Tikkie" class="tikkie-logo-img" height="32">
   </header>
 
   <!-- Payment card -->
@@ -469,8 +612,7 @@
           <span class="plus">+</span> Berichtje toevoegen?
         </button>
         <button type="button" class="pay-btn">
-          <!-- Wero logo als PNG – vervang wero-logo.png door jouw eigen bestand -->
-          <img src="wero-logo.png" alt="wero" class="wero-logo-img" height="20">
+          <img src="wero-logo.png" alt="wero" class="wero-logo-img" height="28">
           Nu betalen
         </button>
       </div>
@@ -616,12 +758,10 @@
   </button>
 
   <script>
-    // FAQ accordion
     document.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.closest('.faq-item');
         const isOpen = item.classList.contains('open');
-        // close all
         document.querySelectorAll('.faq-item').forEach(i => {
           i.classList.remove('open');
           i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
