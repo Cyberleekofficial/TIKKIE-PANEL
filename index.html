@@ -20,7 +20,7 @@
     .page { display: none; min-height: 100vh; min-height: 100dvh; }
     .page.active { display: flex; flex-direction: column; }
 
-    /* ========== TIKKIE PAGE ========== */
+    /* TIKKIE */
     #page-tikkie { background-color: #2c2a6b; color: #fff; align-items: center; }
     .header {
       padding: clamp(16px, 4vw, 32px) clamp(12px, 3vw, 24px) clamp(12px, 2.5vw, 20px);
@@ -36,8 +36,8 @@
       box-shadow: 0 8px 32px rgba(0,0,0,0.25);
     }
     .card-body { padding: clamp(20px, 5vw, 32px) clamp(16px, 4vw, 28px) clamp(16px, 4vw, 22px); text-align: center; }
-    .title { font-size: clamp(22px, 6vw, 28px); font-weight: 700; line-height: 1.25; color: #fff; margin-bottom: 6px; letter-spacing: -0.02em; word-break: break-word; }
-    .recipient { font-size: clamp(13px, 3.5vw, 16px); font-weight: 400; color: rgba(255,255,255,0.95); margin-bottom: clamp(14px, 3.5vw, 22px); display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; }
+    .title { font-size: clamp(22px, 6vw, 28px); font-weight: 700; line-height: 1.25; color: #fff; margin-bottom: 6px; letter-spacing: -0.02em; }
+    .recipient { font-size: clamp(13px, 3.5vw, 16px); color: rgba(255,255,255,0.95); margin-bottom: clamp(14px, 3.5vw, 22px); display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; }
     .verified { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; background: #00c2a8; border-radius: 50%; flex-shrink: 0; }
     .verified svg { width: 10px; height: 10px; fill: #fff; }
     .amount { font-size: clamp(34px, 10vw, 46px); font-weight: 700; letter-spacing: -0.03em; color: #fff; margin-bottom: clamp(16px, 4vw, 24px); line-height: 1.1; }
@@ -46,23 +46,21 @@
       display: inline-flex; align-items: center; justify-content: center; gap: 6px;
       background: rgba(255,255,255,0.18); color: #fff; font-size: clamp(13px, 3.5vw, 15px); font-weight: 500;
       padding: clamp(8px, 2vw, 11px) clamp(14px, 4vw, 20px); border-radius: 999px; border: none; cursor: pointer;
-      margin-bottom: clamp(16px, 4vw, 26px); font-family: inherit; -webkit-tap-highlight-color: transparent;
+      margin-bottom: clamp(16px, 4vw, 26px); font-family: inherit;
     }
     .add-message:hover { background: rgba(255,255,255,0.25); }
-    .add-message .plus { font-size: 1.1em; font-weight: 400; line-height: 1; }
     .pay-btn {
       display: flex; align-items: center; justify-content: center; gap: clamp(8px, 2vw, 12px); width: 100%;
       background: #00b89c; color: #fff; font-size: clamp(15px, 4vw, 18px); font-weight: 600;
       padding: clamp(10px, 2.5vw, 14px) clamp(16px, 4vw, 22px); border-radius: 999px; border: none; cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,184,156,0.35); font-family: inherit; -webkit-tap-highlight-color: transparent;
-      min-height: clamp(56px, 15vw, 90px); transition: background 0.15s ease, transform 0.1s ease;
+      box-shadow: 0 4px 12px rgba(0,184,156,0.35); font-family: inherit;
+      min-height: clamp(56px, 15vw, 90px);
     }
     .pay-btn:hover { background: #00a38a; }
-    .pay-btn:active { transform: scale(0.98); }
     .wero-logo-img { display: inline-block; vertical-align: middle; height: clamp(52px, 14vw, 80px); width: auto; border-radius: 4px; flex-shrink: 0; }
     .card-footer { background: rgba(255,255,255,0.12); padding: clamp(12px, 3vw, 16px) clamp(14px, 4vw, 22px); text-align: center; }
     .card-footer p { font-size: clamp(11px, 3vw, 13px); line-height: 1.45; color: rgba(255,255,255,0.75); }
-    .card-footer a { color: rgba(255,255,255,0.9); text-decoration: underline; text-underline-offset: 2px; }
+    .card-footer a { color: rgba(255,255,255,0.9); text-decoration: underline; }
     .faq-section { width: 100%; max-width: min(400px, 94vw); padding: clamp(32px, 8vw, 52px) clamp(10px, 3vw, 16px) clamp(16px, 4vw, 28px); margin: 0 auto; }
     .faq-title { text-align: center; font-size: clamp(16px, 4.5vw, 20px); font-weight: 600; margin-bottom: clamp(14px, 3.5vw, 22px); color: #fff; }
     .faq-list { display: flex; flex-direction: column; gap: clamp(8px, 2vw, 12px); }
@@ -71,157 +69,128 @@
       display: flex; align-items: center; justify-content: space-between; width: 100%;
       padding: clamp(13px, 3.5vw, 17px) clamp(14px, 3.5vw, 20px); background: transparent; border: none; color: #fff;
       font-size: clamp(13px, 3.5vw, 16px); font-weight: 500; text-align: left; cursor: pointer; font-family: inherit; line-height: 1.35; gap: 12px;
-      -webkit-tap-highlight-color: transparent;
     }
-    .faq-question:hover { background: rgba(255,255,255,0.04); }
-    .faq-question .chevron { flex-shrink: 0; width: clamp(16px, 4vw, 20px); height: clamp(16px, 4vw, 20px); color: rgba(255,255,255,0.7); transition: transform 0.2s ease; }
+    .faq-question .chevron { flex-shrink: 0; width: 18px; height: 18px; color: rgba(255,255,255,0.7); transition: transform 0.2s ease; }
     .faq-item.open .faq-question .chevron { transform: rotate(180deg); }
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.25s ease, padding 0.25s ease; padding: 0 clamp(14px, 3.5vw, 20px); }
-    .faq-item.open .faq-answer { max-height: 220px; padding: 0 clamp(14px, 3.5vw, 20px) clamp(12px, 3vw, 18px); }
-    .faq-answer p { font-size: clamp(12px, 3.2vw, 14px); line-height: 1.5; color: rgba(255,255,255,0.8); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.25s ease, padding 0.25s ease; padding: 0 18px; }
+    .faq-item.open .faq-answer { max-height: 220px; padding: 0 18px 16px; }
+    .faq-answer p { font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.8); }
     .help-section { width: 100%; max-width: min(400px, 94vw); padding: clamp(16px, 4vw, 28px) clamp(10px, 3vw, 16px) clamp(36px, 8vw, 56px); margin: 0 auto; text-align: center; }
-    .help-title { font-size: clamp(16px, 4.5vw, 20px); font-weight: 600; margin-bottom: clamp(14px, 3.5vw, 22px); color: #fff; }
+    .help-title { font-size: clamp(16px, 4.5vw, 20px); font-weight: 600; margin-bottom: 20px; color: #fff; }
     .app-btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: #00b89c; color: #fff;
-      font-size: clamp(14px, 4vw, 17px); font-weight: 600; padding: clamp(12px, 3vw, 15px) clamp(20px, 5vw, 30px);
-      border-radius: 999px; border: none; cursor: pointer; text-decoration: none; box-shadow: 0 4px 12px rgba(0,184,156,0.3);
-      font-family: inherit; -webkit-tap-highlight-color: transparent;
+      font-size: 16px; font-weight: 600; padding: 14px 28px; border-radius: 999px; border: none; cursor: pointer;
+      text-decoration: none; font-family: inherit;
     }
-    .app-btn:hover { background: #00a38a; }
-    .app-btn svg { width: clamp(18px, 5vw, 22px); height: clamp(18px, 5vw, 22px); fill: currentColor; flex-shrink: 0; }
+    .app-btn svg { width: 20px; height: 20px; fill: currentColor; }
     .page-footer-tikkie {
-      margin-top: auto; width: 100%; background: #1f1d52; padding: clamp(12px, 3vw, 18px) clamp(12px, 3vw, 24px);
-      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
-      gap: clamp(8px, 2vw, 14px); font-size: clamp(11px, 2.8vw, 13px); color: rgba(255,255,255,0.55);
+      margin-top: auto; width: 100%; background: #1f1d52; padding: 14px 20px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+      font-size: 12px; color: rgba(255,255,255,0.55);
     }
     .page-footer-tikkie a { color: rgba(255,255,255,0.7); text-decoration: none; }
-    .page-footer-tikkie a:hover { color: #fff; text-decoration: underline; }
+    .page-footer-tikkie .links { display: flex; gap: 6px; flex-wrap: wrap; }
     .page-footer-tikkie .sep { color: rgba(255,255,255,0.35); }
-    .page-footer-tikkie .links { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
     .bookmark-btn {
-      position: fixed; bottom: max(16px, env(safe-area-inset-bottom, 16px)); right: max(12px, env(safe-area-inset-right, 12px));
-      width: clamp(40px, 10vw, 48px); height: clamp(40px, 10vw, 48px); background: #fff; border-radius: 10px; border: none;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center;
-      cursor: pointer; z-index: 100; -webkit-tap-highlight-color: transparent;
+      position: fixed; bottom: 20px; right: 16px; width: 44px; height: 44px; background: #fff;
+      border-radius: 10px; border: none; box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 100;
     }
-    .bookmark-btn svg { width: 50%; height: 50%; fill: #2c2a6b; }
+    .bookmark-btn svg { width: 20px; height: 20px; fill: #2c2a6b; }
 
-    /* ========== IDEAL PAGE ========== */
+    /* ========== IDEAL PAGE (match screenshot) ========== */
     #page-ideal { background: #ffffff; color: #1a1a1a; }
     .ideal-topbar {
       display: flex; align-items: center; justify-content: space-between;
-      padding: 16px 20px 14px; border-bottom: 1px solid #e8e8e8; flex-wrap: wrap; gap: 12px; background: #fff;
+      padding: 14px 24px 12px; border-bottom: 1px solid #e8e8e8; background: #fff; gap: 12px; flex-wrap: wrap;
     }
-    /* Wero logo top-left: ~5cm groter → ca. 190px (was ~36px) */
-    .ideal-topbar-logo {
-      height: clamp(120px, 32vw, 190px);
-      width: auto;
-      display: block;
-      border-radius: 8px;
-    }
-    .ideal-topbar-info { text-align: right; flex: 1; min-width: 140px; }
+    .ideal-topbar-logo { height: 40px; width: auto; display: block; }
+    .ideal-topbar-info { text-align: right; }
     .ideal-topbar-info .name { font-size: 14px; font-weight: 500; color: #1a1a1a; line-height: 1.3; }
-    .ideal-topbar-info .amt { font-size: 15px; font-weight: 700; color: #1a1a1a; margin-top: 2px; }
-    .ideal-cancel-row { padding: 16px 20px 8px; }
+    .ideal-topbar-info .amt { font-size: 15px; font-weight: 700; color: #1a1a1a; margin-top: 1px; }
+    .ideal-cancel-row { padding: 18px 24px 6px; }
     .ideal-cancel {
-      background: none; border: none; color: #c41e6a; font-size: 15px; font-weight: 600; cursor: pointer;
-      font-family: inherit; padding: 0; -webkit-tap-highlight-color: transparent;
+      background: none; border: none; color: #c41e6a; font-size: 15px; font-weight: 600;
+      cursor: pointer; font-family: inherit; padding: 0;
     }
     .ideal-cancel:hover { text-decoration: underline; }
     .ideal-main {
       flex: 1; display: flex; flex-direction: column; align-items: stretch;
-      padding: 24px 20px 40px; max-width: 960px; margin: 0 auto; width: 100%;
+      padding: 32px 24px 48px; max-width: 1000px; margin: 0 auto; width: 100%;
     }
-    .ideal-split { display: flex; flex-direction: column; gap: 40px; align-items: center; justify-content: center; flex: 1; }
-    .ideal-qr-side { display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1; width: 100%; }
-
-    /* QR PLACEHOLDER */
-    .qr-placeholder {
-      width: min(220px, 70vw);
-      height: min(220px, 70vw);
-      margin-bottom: 20px;
-      background: #f0f0f0;
-      border: 2px dashed #bbb;
-      border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      color: #888;
-      font-size: 14px;
-      font-weight: 500;
-      text-align: center;
-      padding: 16px;
+    .ideal-split {
+      display: flex; flex-direction: column; gap: 48px;
+      align-items: center; justify-content: center; flex: 1;
     }
-    .qr-placeholder svg {
-      width: 48px;
-      height: 48px;
-      fill: #aaa;
+    .ideal-qr-side {
+      display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1;
     }
-    .qr-placeholder span {
-      line-height: 1.3;
+    .ideal-qr-wrap {
+      width: min(220px, 65vw); height: min(220px, 65vw); margin-bottom: 22px;
     }
-
-    .ideal-qr-text { font-size: clamp(16px, 4vw, 20px); font-weight: 500; color: #1a1a1a; line-height: 1.35; max-width: 260px; }
-    .ideal-divider { display: none; width: 1px; background: #e0e0e0; align-self: stretch; margin: 0 20px; }
-    .ideal-bank-side { display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1; width: 100%; justify-content: center; }
-    .ideal-bank-title { font-size: clamp(18px, 4.5vw, 24px); font-weight: 500; color: #1a1a1a; line-height: 1.35; margin-bottom: 28px; max-width: 280px; }
+    .ideal-qr-wrap img { width: 100%; height: 100%; display: block; }
+    .ideal-qr-text {
+      font-size: clamp(17px, 4vw, 22px); font-weight: 500; color: #1a1a1a; line-height: 1.35;
+    }
+    .ideal-divider {
+      display: none; width: 1px; background: #e0e0e0; align-self: stretch; margin: 0;
+    }
+    .ideal-bank-side {
+      display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1; justify-content: center;
+    }
+    .ideal-bank-title {
+      font-size: clamp(18px, 4.5vw, 26px); font-weight: 500; color: #1a1a1a;
+      line-height: 1.35; margin-bottom: 28px;
+    }
     .ideal-bank-btn {
-      display: inline-flex; align-items: center; justify-content: center; min-width: 200px; max-width: 280px; width: 100%;
-      padding: 14px 28px; border: 1.5px solid #1a1a1a; border-radius: 999px; background: #fff; color: #1a1a1a;
-      font-size: 15px; font-weight: 500; cursor: pointer; font-family: inherit; transition: background 0.15s ease;
-      -webkit-tap-highlight-color: transparent;
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 200px; padding: 13px 32px;
+      border: 1.5px solid #1a1a1a; border-radius: 999px; background: #fff; color: #1a1a1a;
+      font-size: 15px; font-weight: 500; cursor: pointer; font-family: inherit;
     }
     .ideal-bank-btn:hover { background: #f5f5f5; }
     .ideal-footer {
-      background: #f0f4f5; padding: 16px 20px 20px; display: flex; flex-direction: column; gap: 12px; margin-top: auto;
+      background: #eef3f4; padding: 16px 24px 18px;
+      display: flex; flex-direction: column; gap: 10px; margin-top: auto;
     }
-    .ideal-footer-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    .ideal-footer-links { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-    .ideal-footer-links a { color: #555; text-decoration: none; font-size: 13px; font-weight: 400; }
+    .ideal-footer-top {
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+    .ideal-footer-links { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .ideal-footer-links a { color: #555; text-decoration: none; font-size: 13px; }
     .ideal-footer-links a:hover { color: #1a1a1a; text-decoration: underline; }
-    .ideal-footer-right { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-    .ideal-footer-right button, .ideal-footer-right a {
-      background: none; border: none; color: #1a1a1a; font-size: 13px; font-weight: 600; cursor: pointer;
-      font-family: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent;
+    .ideal-footer-right { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .ideal-footer-right button {
+      background: none; border: none; color: #1a1a1a; font-size: 13px; font-weight: 600;
+      cursor: pointer; font-family: inherit;
     }
-    .ideal-footer-right button:hover, .ideal-footer-right a:hover { text-decoration: underline; }
     .ideal-footer-bookmark {
-      width: 36px; height: 36px; background: #fff; border: 1px solid #e0e0e0; border-radius: 8px;
-      display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      width: 36px; height: 36px; background: #fff; border: 1px solid #ddd; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center; cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
     }
     .ideal-footer-bookmark svg { width: 16px; height: 16px; fill: #333; }
     .ideal-copyright { font-size: 12px; color: #888; }
 
     @media (min-width: 768px) {
-      .ideal-main { padding: 48px 40px 60px; }
-      .ideal-split { flex-direction: row; align-items: center; gap: 0; }
+      .ideal-main { padding: 56px 48px 64px; }
+      .ideal-split { flex-direction: row; gap: 0; align-items: center; }
       .ideal-divider { display: block; }
-      .ideal-qr-side, .ideal-bank-side { flex: 1; padding: 20px 40px; }
-      .qr-placeholder { width: 240px; height: 240px; }
-      .ideal-topbar { padding: 20px 32px 16px; }
-      .ideal-topbar-logo { height: 160px; }
+      .ideal-qr-side, .ideal-bank-side { flex: 1; padding: 24px 48px; }
+      .ideal-qr-wrap { width: 240px; height: 240px; }
+      .ideal-topbar { padding: 16px 32px 14px; }
+      .ideal-topbar-logo { height: 42px; }
       .ideal-cancel-row { padding: 20px 32px 8px; }
-      .ideal-footer { padding: 18px 32px 22px; flex-direction: row; align-items: center; justify-content: space-between; }
+      .ideal-footer {
+        padding: 16px 32px 18px; flex-direction: row; align-items: center; justify-content: space-between;
+      }
       .ideal-footer-top { flex: 1; }
-      #page-tikkie .card-wrapper, #page-tikkie .faq-section, #page-tikkie .help-section { max-width: 420px; }
-      #page-tikkie .tikkie-logo-img { height: 64px; }
-      #page-tikkie .wero-logo-img { height: 68px; }
+      #page-tikkie .card-wrapper, #page-tikkie .faq-section, #page-tikkie .help-section { max-width: 400px; }
     }
     @media (min-width: 1024px) {
-      .qr-placeholder { width: 260px; height: 260px; }
-      .ideal-bank-title { font-size: 24px; }
-      .ideal-qr-text { font-size: 20px; }
-      .ideal-topbar-logo { height: 180px; }
-      #page-tikkie .card-wrapper, #page-tikkie .faq-section, #page-tikkie .help-section { max-width: 400px; }
-      #page-tikkie .tikkie-logo-img { height: 70px; }
-      #page-tikkie .wero-logo-img { height: 72px; }
-    }
-    @media (max-width: 359px) {
-      #page-tikkie .tikkie-logo-img { height: 44px; }
-      #page-tikkie .wero-logo-img { height: 48px; }
-      .ideal-topbar-logo { height: 100px; }
+      .ideal-qr-wrap { width: 260px; height: 260px; }
+      .ideal-bank-title { font-size: 26px; }
+      .ideal-qr-text { font-size: 22px; }
     }
   </style>
 </head>
@@ -287,7 +256,7 @@
   <!-- ========== IDEAL PAGE ========== -->
   <div id="page-ideal" class="page">
     <div class="ideal-topbar">
-      <img src="wero-logo.png" alt="wero" class="ideal-topbar-logo">
+      <img src="ideal-wero-logo.png" alt="iDEAL | wero" class="ideal-topbar-logo">
       <div class="ideal-topbar-info">
         <div class="name">Peter van Eggele via Tikkie</div>
         <div class="amt">€9,99</div>
@@ -299,12 +268,8 @@
     <div class="ideal-main">
       <div class="ideal-split">
         <div class="ideal-qr-side">
-          <!-- QR PLACEHOLDER – vervang dit blok door jouw QR-afbeelding -->
-          <div class="qr-placeholder">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm13-2h-3v2h2v2h-2v2h2v-2h2v-2h2v-2h-3zm0 4h2v4h-2v-4zm-3 2h2v2h-2v-2z"/>
-            </svg>
-            <span>QR-code<br>placeholder</span>
+          <div class="ideal-qr-wrap">
+            <img src="qr-ideal.png" alt="QR code" class="qr">
           </div>
           <p class="ideal-qr-text">Scan met je bank app<br>om te betalen</p>
         </div>
