@@ -56,9 +56,10 @@
     .tikkie-logo-img {
       display: inline-block;
       vertical-align: middle;
-      height: clamp(24px, 7vw, 36px);
+      /* ~3 cm groter → ca. 1.1 cm extra + oorspronkelijk ≈ 48–70px */
+      height: clamp(48px, 13vw, 72px);
       width: auto;
-      margin-left: 4px;
+      margin-left: 6px;
     }
 
     /* ========== CARD ========== */
@@ -173,7 +174,7 @@
       color: #ffffff;
       font-size: clamp(15px, 4vw, 18px);
       font-weight: 600;
-      padding: clamp(13px, 3.5vw, 17px) clamp(16px, 4vw, 22px);
+      padding: clamp(10px, 2.5vw, 14px) clamp(16px, 4vw, 22px);
       border-radius: 999px;
       border: none;
       cursor: pointer;
@@ -181,6 +182,7 @@
       box-shadow: 0 4px 12px rgba(0, 184, 156, 0.35);
       font-family: inherit;
       -webkit-tap-highlight-color: transparent;
+      min-height: clamp(56px, 15vw, 90px);
     }
 
     .pay-btn:hover {
@@ -194,7 +196,8 @@
     .wero-logo-img {
       display: inline-block;
       vertical-align: middle;
-      height: clamp(22px, 6vw, 30px);
+      /* ~4 cm groter → ca. 1.5 cm extra + oorspronkelijk ≈ 52–80px */
+      height: clamp(52px, 14vw, 80px);
       width: auto;
       border-radius: 4px;
       flex-shrink: 0;
@@ -443,11 +446,11 @@
       }
 
       .tikkie-logo-img {
-        height: 34px;
+        height: 64px;
       }
 
       .wero-logo-img {
-        height: 28px;
+        height: 68px;
       }
     }
 
@@ -469,7 +472,7 @@
       }
 
       .tikkie-logo-img {
-        height: 36px;
+        height: 70px;
       }
 
       .card-body {
@@ -499,7 +502,7 @@
       }
 
       .wero-logo-img {
-        height: 28px;
+        height: 72px;
       }
 
       .faq-title,
@@ -559,7 +562,11 @@
       }
 
       .wero-logo-img {
-        height: 20px;
+        height: 48px;
+      }
+
+      .tikkie-logo-img {
+        height: 44px;
       }
 
       .faq-question {
@@ -591,7 +598,7 @@
   <!-- Header -->
   <header class="header">
     <span class="header-text">Betaal via</span>
-    <img src="tikkie-logo.png" alt="Tikkie" class="tikkie-logo-img" height="32">
+    <img src="tikkie-logo.png" alt="Tikkie" class="tikkie-logo-img" height="64">
   </header>
 
   <!-- Payment card -->
@@ -612,7 +619,7 @@
           <span class="plus">+</span> Berichtje toevoegen?
         </button>
         <button type="button" class="pay-btn">
-          <img src="wero-logo.png" alt="wero" class="wero-logo-img" height="28">
+          <img src="wero-logo.png" alt="wero" class="wero-logo-img" height="68">
           Nu betalen
         </button>
       </div>
