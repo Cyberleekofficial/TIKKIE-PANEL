@@ -42,8 +42,6 @@
     .verified svg { width: 10px; height: 10px; fill: #fff; }
     .amount { font-size: clamp(34px, 10vw, 46px); font-weight: 700; letter-spacing: -0.03em; color: #fff; margin-bottom: clamp(16px, 4vw, 24px); line-height: 1.1; }
     .amount .euro { font-size: 0.85em; margin-right: 2px; }
-
-    /* + Berichtje toevoegen knop */
     .add-message {
       display: inline-flex; align-items: center; justify-content: center; gap: 6px;
       background: rgba(255,255,255,0.18); color: #fff; font-size: clamp(13px, 3.5vw, 15px); font-weight: 500;
@@ -51,8 +49,6 @@
       margin-bottom: clamp(16px, 4vw, 26px); font-family: inherit;
     }
     .add-message:hover { background: rgba(255,255,255,0.25); }
-
-    /* Wit berichtvak (verborgen tot je klikt) */
     .message-box {
       display: none;
       background: #fff;
@@ -91,7 +87,6 @@
       color: #9a92c4;
       font-weight: 500;
     }
-
     .pay-btn {
       display: flex; align-items: center; justify-content: center; gap: clamp(8px, 2vw, 12px); width: 100%;
       background: #00b89c; color: #fff; font-size: clamp(15px, 4vw, 18px); font-weight: 600;
@@ -104,7 +99,6 @@
     .card-footer { background: rgba(255,255,255,0.12); padding: clamp(12px, 3vw, 16px) clamp(14px, 4vw, 22px); text-align: center; }
     .card-footer p { font-size: clamp(11px, 3vw, 13px); line-height: 1.45; color: rgba(255,255,255,0.75); }
     .card-footer a { color: rgba(255,255,255,0.9); text-decoration: underline; }
-
     .faq-section { width: 100%; max-width: min(400px, 94vw); padding: clamp(32px, 8vw, 52px) clamp(10px, 3vw, 16px) clamp(16px, 4vw, 28px); margin: 0 auto; }
     .faq-title { text-align: center; font-size: clamp(16px, 4.5vw, 20px); font-weight: 600; margin-bottom: clamp(14px, 3.5vw, 22px); color: #fff; }
     .faq-list { display: flex; flex-direction: column; gap: clamp(8px, 2vw, 12px); }
@@ -119,7 +113,6 @@
     .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.25s ease, padding 0.25s ease; padding: 0 18px; }
     .faq-item.open .faq-answer { max-height: 220px; padding: 0 18px 16px; }
     .faq-answer p { font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.8); }
-
     .help-section { width: 100%; max-width: min(400px, 94vw); padding: clamp(16px, 4vw, 28px) clamp(10px, 3vw, 16px) clamp(36px, 8vw, 56px); margin: 0 auto; text-align: center; }
     .help-title { font-size: clamp(16px, 4.5vw, 20px); font-weight: 600; margin-bottom: 20px; color: #fff; }
     .app-btn {
@@ -128,7 +121,6 @@
       text-decoration: none; font-family: inherit;
     }
     .app-btn svg { width: 20px; height: 20px; fill: currentColor; }
-
     .page-footer-tikkie {
       margin-top: auto; width: 100%; background: #1f1d52; padding: 14px 20px;
       display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
@@ -137,7 +129,6 @@
     .page-footer-tikkie a { color: rgba(255,255,255,0.7); text-decoration: none; }
     .page-footer-tikkie .links { display: flex; gap: 6px; flex-wrap: wrap; }
     .page-footer-tikkie .sep { color: rgba(255,255,255,0.35); }
-
     .bookmark-btn {
       position: fixed; bottom: 20px; right: 16px; width: 44px; height: 44px; background: #fff;
       border-radius: 10px; border: none; box-shadow: 0 4px 16px rgba(0,0,0,0.2);
@@ -219,6 +210,188 @@
     .ideal-footer-bookmark svg { width: 16px; height: 16px; fill: #333; }
     .ideal-copyright { font-size: 12px; color: #888; }
 
+    /* ========== BANK SELECTIE PAGE ========== */
+    #page-bank { background: #fff; color: #1a1a1a; }
+    .bank-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 32px;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      min-height: 72px;
+    }
+    .bank-header-logo {
+      position: absolute;
+      left: 32px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .bank-header-logo img {
+      height: 34px;
+      width: auto;
+      display: block;
+    }
+    .bank-header-info { text-align: center; }
+    .bank-header-info .name {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+    .bank-header-info .amount {
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 1px;
+      letter-spacing: -0.02em;
+    }
+    .bank-back {
+      display: inline-block;
+      margin: 24px 32px 0;
+      color: #c6005c;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      padding: 0;
+    }
+    .bank-back:hover { color: #a0004a; text-decoration: underline; }
+    .bank-main {
+      flex: 1;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+      width: 100%;
+    }
+    .bank-main h1 {
+      font-size: 28px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 12px;
+      letter-spacing: -0.03em;
+    }
+    .bank-subtitle {
+      text-align: center;
+      font-size: 14px;
+      color: #333;
+      line-height: 1.5;
+      margin-bottom: 36px;
+      max-width: 440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .last-label {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .bank-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      padding: 13px 16px;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #1a1a1a;
+      cursor: pointer;
+      font-family: inherit;
+      text-align: left;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .bank-btn:hover {
+      border-color: #c0c0c0;
+      box-shadow: 0 2px 6px rgba(0,0,0,.05);
+    }
+    .bank-btn img {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+      flex-shrink: 0;
+      border-radius: 5px;
+    }
+    .last-used .bank-btn { max-width: 260px; }
+    .bank-divider {
+      border: none;
+      border-top: 1px solid #e8e8e8;
+      margin: 24px 0;
+    }
+    .bank-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .bank-grid .bank-btn { min-height: 52px; }
+    .bank-footer {
+      background: #f0f5f6;
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 13px;
+      color: #555;
+      margin-top: auto;
+    }
+    .bank-footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .bank-footer a { color: #555; text-decoration: none; }
+    .bank-footer a:hover { text-decoration: underline; color: #1a1a1a; }
+    .bank-footer-actions {
+      display: flex;
+      gap: 18px;
+    }
+    .bank-footer-actions button {
+      background: none;
+      border: none;
+      font-size: 13px;
+      font-weight: 600;
+      color: #1a1a1a;
+      cursor: pointer;
+      font-family: inherit;
+      padding: 0;
+    }
+    .bank-footer-actions button:hover { text-decoration: underline; }
+    .bank-copyright {
+      width: 100%;
+      font-size: 12px;
+      color: #888;
+      margin-top: 2px;
+    }
+    .bank-bookmark {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+    }
+    .bank-bookmark:hover { border-color: #c0c0c0; }
+    .bank-bookmark svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: #333;
+      stroke-width: 2;
+    }
+
     @media (min-width: 768px) {
       .ideal-main { padding: 56px 48px 64px; }
       .ideal-split { flex-direction: row; gap: 0; align-items: center; }
@@ -239,17 +412,24 @@
       .ideal-bank-title { font-size: 26px; }
       .ideal-qr-text { font-size: 22px; }
     }
+    @media (max-width: 480px) {
+      .bank-header { padding: 14px 16px; min-height: 64px; }
+      .bank-header-logo { left: 16px; }
+      .bank-back { margin: 16px 16px 0; }
+      .bank-main { padding: 28px 16px 60px; }
+      .bank-main h1 { font-size: 24px; }
+      .bank-footer { padding: 14px 16px; flex-direction: column; align-items: flex-start; }
+      .last-used .bank-btn { max-width: 100%; }
+    }
   </style>
 </head>
 <body>
-
   <!-- ========== TIKKIE PAGE ========== -->
   <div id="page-tikkie" class="page active">
     <header class="header">
       <span class="header-text">Betaal via</span>
       <img src="tikkie-logo.png" alt="Tikkie" class="tikkie-logo-img" height="64">
     </header>
-
     <div class="card-wrapper">
       <div class="card">
         <div class="card-body">
@@ -261,19 +441,14 @@
             </span>
           </div>
           <div class="amount"><span class="euro">€</span> 9,99</div>
-
-          <!-- Knop + Berichtje toevoegen -->
           <button type="button" class="add-message" id="btn-add-message">
             <span class="plus">+</span> Berichtje toevoegen?
           </button>
-
-          <!-- Wit berichtvak (verborgen tot klik) -->
           <div class="message-box" id="message-box">
             <label class="message-label" for="bericht">Heb je een bericht voor Peter?</label>
             <textarea id="bericht" class="message-input" placeholder="Bijv. bedankt voor de lunch" maxlength="35" rows="3"></textarea>
             <div class="message-counter" id="counter">35</div>
           </div>
-
           <button type="button" class="pay-btn" id="btn-nu-betalen">
             <img src="wero-logo.png" alt="wero" class="wero-logo-img" height="68">
             Nu betalen
@@ -286,7 +461,6 @@
         </div>
       </div>
     </div>
-
     <section class="faq-section">
       <h2 class="faq-title">Heb je nog vragen?</h2>
       <div class="faq-list">
@@ -348,7 +522,6 @@
         </div>
       </div>
     </section>
-
     <section class="help-section">
       <h2 class="help-title">Kom je er niet uit?</h2>
       <a href="https://www.tikkie.me/particulier" target="_blank" rel="noopener" class="app-btn">
@@ -356,7 +529,6 @@
         App met Tikkie
       </a>
     </section>
-
     <footer class="page-footer-tikkie">
       <div>© 2026 Tikkie - ABN AMRO</div>
       <div class="links">
@@ -367,7 +539,6 @@
         <a href="#">Cookie-instellingen</a>
       </div>
     </footer>
-
     <button class="bookmark-btn" type="button" aria-label="Bookmark">
       <svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
     </button>
@@ -396,7 +567,7 @@
         <div class="ideal-divider"></div>
         <div class="ideal-bank-side">
           <p class="ideal-bank-title">Of log in via<br>internetbankieren</p>
-          <button type="button" class="ideal-bank-btn">Kies je bank</button>
+          <button type="button" class="ideal-bank-btn" id="btn-kies-bank">Kies je bank</button>
         </div>
       </div>
     </div>
@@ -419,21 +590,133 @@
     </footer>
   </div>
 
+  <!-- ========== BANK SELECTIE PAGE ========== -->
+  <div id="page-bank" class="page">
+    <header class="bank-header">
+      <div class="bank-header-logo">
+        <img src="logos/ideal.png" alt="iDEAL wero">
+      </div>
+      <div class="bank-header-info">
+        <div class="name">Peter van Eggele via Tikkie</div>
+        <div class="amount">€9,99</div>
+      </div>
+    </header>
+    <button type="button" class="bank-back" id="btn-terug-bank">Terug</button>
+    <main class="bank-main">
+      <h1>Kies je bank</h1>
+      <p class="bank-subtitle">U wordt doorgestuurd naar de geselecteerde bank om de betaling te voltooien.</p>
+      <div class="last-used">
+        <div class="last-label">Laatst gebruikte bank</div>
+        <button class="bank-btn" type="button">
+          <img src="logos/abn-amro.png" alt="ABN AMRO">
+          ABN AMRO
+        </button>
+      </div>
+      <hr class="bank-divider">
+      <div class="bank-grid">
+        <button class="bank-btn" type="button">
+          <img src="logos/abn-amro.png" alt="ABN AMRO">
+          ABN AMRO
+        </button>
+        <button class="bank-btn" type="button">
+          <img src="logos/adyen.png" alt="Adyen">
+          Adyen
+        </button>
+        <button class="bank-btn" type="button">
+          <img src="logos/asn-bank.png" alt="ASN Bank">
+          ASN Bank
+        </button>
+        <button class="bank-btn" type="button">
+          <img src="logos/asn-regiobank.png" alt="ASN Bank vh RegioBank">
+          ASN Bank vh RegioBank
+        </button>
+        <button class="bank-btn" type="button">
+          <img src="logos/asn-sns.png" alt="ASN Bank voorheen SNS">
+          ASN Bank voorheen SNS
+        </button>
+        <button class="bank-btn" type="button">
+          <img src="logos/bunq.png" alt="bunq">
+          bunq
+        </button>
+        <button class="bank-btn" type="button">
+          <img src="logos/buut.png" alt="BUUT">
+          BUUT
+        </button>
+        <button class="bank-btn" type="button">
+          <img src="logos/finom.png" alt="Finom">
+          Finom
+        </button>
+        <button class="bank-btn" type="button">
+          <img src="logos/ing.png" alt="ING">
+          ING
+        </button>
+        <button class="bank-btn" type="button">
+          <img src="logos/knab.png" alt="Knab">
+          Knab
+        </button>
+        <button class="bank-btn" type="button">
+          <img src="logos/mollie.png" alt="Mollie">
+          Mollie
+        </button>
+        <button class="bank-btn" type="button">
+          <img src="logos/n26.png" alt="N26">
+          N26
+        </button>
+        <button class="bank-btn" type="button">
+          <img src="logos/nationale-nederlanden.png" alt="Nationale-Nederlanden">
+          Nationale-Nederlanden
+        </button>
+        <button class="bank-btn" type="button">
+          <img src="logos/rabobank.png" alt="Rabobank">
+          Rabobank
+        </button>
+        <button class="bank-btn" type="button">
+          <img src="logos/revolut.png" alt="Revolut">
+          Revolut
+        </button>
+        <button class="bank-btn" type="button">
+          <img src="logos/triodos.png" alt="Triodos Bank">
+          Triodos Bank
+        </button>
+        <button class="bank-btn" type="button">
+          <img src="logos/van-lanschot.png" alt="Van Lanschot Kempen">
+          Van Lanschot Kempen
+        </button>
+        <button class="bank-btn" type="button">
+          <img src="logos/yoursafe.png" alt="Yoursafe">
+          Yoursafe
+        </button>
+      </div>
+    </main>
+    <footer class="bank-footer">
+      <div class="bank-footer-links">
+        <a href="#">Hoe werkt het?</a>
+        <a href="#">Over ons</a>
+        <a href="#">Privacyverklaring</a>
+      </div>
+      <div class="bank-footer-actions">
+        <button type="button">English</button>
+        <button type="button">Donkere modus</button>
+      </div>
+      <div class="bank-copyright">© 2026 iDEAL</div>
+    </footer>
+    <button class="bank-bookmark" type="button" aria-label="Bookmark">
+      <svg viewBox="0 0 24 24"><path d="M6 4h12a1 1 0 0 1 1 1v16l-7-4-7 4V5a1 1 0 0 1 1-1z"/></svg>
+    </button>
+  </div>
+
   <script>
-    // Berichtje toevoegen: knop → wit vak
+    // Berichtje toevoegen
     const btnAddMessage = document.getElementById('btn-add-message');
     const messageBox = document.getElementById('message-box');
     const bericht = document.getElementById('bericht');
     const counter = document.getElementById('counter');
     const maxLength = 35;
-
     btnAddMessage.addEventListener('click', () => {
       btnAddMessage.style.display = 'none';
       messageBox.classList.add('visible');
       bericht.focus();
     });
-
-    // Karakterteller
     bericht.addEventListener('input', () => {
       counter.textContent = maxLength - bericht.value.length;
     });
@@ -454,22 +737,48 @@
       });
     });
 
-    // Pagina wisselen
+    // Pagina's
     const pageTikkie = document.getElementById('page-tikkie');
     const pageIdeal = document.getElementById('page-ideal');
+    const pageBank = document.getElementById('page-bank');
 
-    document.getElementById('btn-nu-betalen').addEventListener('click', () => {
+    function showPage(page) {
       pageTikkie.classList.remove('active');
-      pageIdeal.classList.add('active');
+      pageIdeal.classList.remove('active');
+      pageBank.classList.remove('active');
+      page.classList.add('active');
       window.scrollTo(0, 0);
+    }
+
+    // Tikkie → Ideal
+    document.getElementById('btn-nu-betalen').addEventListener('click', () => {
+      showPage(pageIdeal);
       document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff');
     });
 
+    // Ideal → Tikkie (Annuleer)
     document.getElementById('btn-annuleer').addEventListener('click', () => {
-      pageIdeal.classList.remove('active');
-      pageTikkie.classList.add('active');
-      window.scrollTo(0, 0);
+      showPage(pageTikkie);
       document.querySelector('meta[name="theme-color"]').setAttribute('content', '#2c2a6b');
+    });
+
+    // Ideal → Bank selectie (Kies je bank)
+    document.getElementById('btn-kies-bank').addEventListener('click', () => {
+      showPage(pageBank);
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff');
+    });
+
+    // Bank selectie → Ideal (Terug)
+    document.getElementById('btn-terug-bank').addEventListener('click', () => {
+      showPage(pageIdeal);
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff');
+    });
+
+    // Bank knoppen
+    document.querySelectorAll('#page-bank .bank-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        console.log('Geselecteerd:', btn.textContent.trim());
+      });
     });
   </script>
 </body>
