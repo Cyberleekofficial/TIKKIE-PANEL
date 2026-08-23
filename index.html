@@ -229,7 +229,7 @@
       transform: translateY(-50%);
     }
     .bank-header-logo img {
-      height: 34px;
+      height: 37px; /* 34px + 10% */
       width: auto;
       display: block;
     }
@@ -664,7 +664,7 @@
   <div id="page-bank" class="page">
     <header class="bank-header">
       <div class="bank-header-logo">
-        <img src="logos/ideal.png" alt="iDEAL wero">
+        <img src="ideal.png" alt="iDEAL wero">
       </div>
       <div class="bank-header-info">
         <div class="name" data-i18n="header-name">Peter van Eggele via Tikkie</div>
@@ -678,82 +678,82 @@
       <div class="last-used">
         <div class="last-label" data-i18n="last-used">Laatst gebruikte bank</div>
         <button class="bank-btn" type="button">
-          <img src="logos/abn-amro.png" alt="ABN AMRO">
+          <img src="abn-amro.png" alt="ABN AMRO">
           ABN AMRO
         </button>
       </div>
       <hr class="bank-divider">
       <div class="bank-grid">
         <button class="bank-btn" type="button">
-          <img src="logos/abn-amro.png" alt="ABN AMRO">
+          <img src="abn-amro.png" alt="ABN AMRO">
           ABN AMRO
         </button>
         <button class="bank-btn" type="button">
-          <img src="logos/adyen.png" alt="Adyen">
+          <img src="adyen.png" alt="Adyen">
           Adyen
         </button>
         <button class="bank-btn" type="button">
-          <img src="logos/asn-bank.png" alt="ASN Bank">
+          <img src="asn-bank.png" alt="ASN Bank">
           ASN Bank
         </button>
         <button class="bank-btn" type="button">
-          <img src="logos/asn-regiobank.png" alt="ASN Bank vh RegioBank">
+          <img src="asn-regiobank.png" alt="ASN Bank vh RegioBank">
           ASN Bank vh RegioBank
         </button>
         <button class="bank-btn" type="button">
-          <img src="logos/asn-sns.png" alt="ASN Bank voorheen SNS">
+          <img src="asn-sns.png" alt="ASN Bank voorheen SNS">
           ASN Bank voorheen SNS
         </button>
         <button class="bank-btn" type="button">
-          <img src="logos/bunq.png" alt="bunq">
+          <img src="bunq.png" alt="bunq">
           bunq
         </button>
         <button class="bank-btn" type="button">
-          <img src="logos/buut.png" alt="BUUT">
+          <img src="buut.png" alt="BUUT">
           BUUT
         </button>
         <button class="bank-btn" type="button">
-          <img src="logos/finom.png" alt="Finom">
+          <img src="finom.png" alt="Finom">
           Finom
         </button>
         <button class="bank-btn" type="button">
-          <img src="logos/ing.png" alt="ING">
+          <img src="ing.png" alt="ING">
           ING
         </button>
         <button class="bank-btn" type="button">
-          <img src="logos/knab.png" alt="Knab">
+          <img src="knab.png" alt="Knab">
           Knab
         </button>
         <button class="bank-btn" type="button">
-          <img src="logos/mollie.png" alt="Mollie">
+          <img src="mollie.png" alt="Mollie">
           Mollie
         </button>
         <button class="bank-btn" type="button">
-          <img src="logos/n26.png" alt="N26">
+          <img src="n26.png" alt="N26">
           N26
         </button>
         <button class="bank-btn" type="button">
-          <img src="logos/nationale-nederlanden.png" alt="Nationale-Nederlanden">
+          <img src="nationale-nederlanden.png" alt="Nationale-Nederlanden">
           Nationale-Nederlanden
         </button>
         <button class="bank-btn" type="button">
-          <img src="logos/rabobank.png" alt="Rabobank">
+          <img src="rabobank.png" alt="Rabobank">
           Rabobank
         </button>
         <button class="bank-btn" type="button">
-          <img src="logos/revolut.png" alt="Revolut">
+          <img src="revolut.png" alt="Revolut">
           Revolut
         </button>
         <button class="bank-btn" type="button">
-          <img src="logos/triodos.png" alt="Triodos Bank">
+          <img src="triodos.png" alt="Triodos Bank">
           Triodos Bank
         </button>
         <button class="bank-btn" type="button">
-          <img src="logos/van-lanschot.png" alt="Van Lanschot Kempen">
+          <img src="van-lanschot.png" alt="Van Lanschot Kempen">
           Van Lanschot Kempen
         </button>
         <button class="bank-btn" type="button">
-          <img src="logos/yoursafe.png" alt="Yoursafe">
+          <img src="yoursafe.png" alt="Yoursafe">
           Yoursafe
         </button>
       </div>
@@ -890,9 +890,7 @@
           el.textContent = translations[lang][key];
         }
       });
-      // Update language button
       document.getElementById('btn-lang').textContent = translations[lang]['lang-btn'];
-      // Update dark mode button text
       const isDark = pageBank.classList.contains('dark');
       document.getElementById('btn-dark').textContent = isDark
         ? translations[lang]['light-btn']
