@@ -20,7 +20,7 @@
     .page { display: none; min-height: 100vh; min-height: 100dvh; }
     .page.active { display: flex; flex-direction: column; }
 
-    /* TIKKIE */
+    /* ========== TIKKIE PAGE ========== */
     #page-tikkie { background-color: #2c2a6b; color: #fff; align-items: center; }
     .header {
       padding: clamp(16px, 4vw, 32px) clamp(12px, 3vw, 24px) clamp(12px, 2.5vw, 20px);
@@ -106,13 +106,19 @@
     }
     .bookmark-btn svg { width: 50%; height: 50%; fill: #2c2a6b; }
 
-    /* IDEAL PAGE */
+    /* ========== IDEAL PAGE ========== */
     #page-ideal { background: #ffffff; color: #1a1a1a; }
     .ideal-topbar {
       display: flex; align-items: center; justify-content: space-between;
-      padding: 14px 20px 12px; border-bottom: 1px solid #e8e8e8; flex-wrap: wrap; gap: 10px; background: #fff;
+      padding: 16px 20px 14px; border-bottom: 1px solid #e8e8e8; flex-wrap: wrap; gap: 12px; background: #fff;
     }
-    .ideal-topbar-logo { height: 36px; width: auto; display: block; }
+    /* Wero logo top-left: ~5cm groter → ca. 190px (was ~36px) */
+    .ideal-topbar-logo {
+      height: clamp(120px, 32vw, 190px);
+      width: auto;
+      display: block;
+      border-radius: 8px;
+    }
     .ideal-topbar-info { text-align: right; flex: 1; min-width: 140px; }
     .ideal-topbar-info .name { font-size: 14px; font-weight: 500; color: #1a1a1a; line-height: 1.3; }
     .ideal-topbar-info .amt { font-size: 15px; font-weight: 700; color: #1a1a1a; margin-top: 2px; }
@@ -128,16 +134,35 @@
     }
     .ideal-split { display: flex; flex-direction: column; gap: 40px; align-items: center; justify-content: center; flex: 1; }
     .ideal-qr-side { display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1; width: 100%; }
-    .ideal-qr-wrap {
-      position: relative; width: min(220px, 70vw); height: min(220px, 70vw); margin-bottom: 20px;
+
+    /* QR PLACEHOLDER */
+    .qr-placeholder {
+      width: min(220px, 70vw);
+      height: min(220px, 70vw);
+      margin-bottom: 20px;
+      background: #f0f0f0;
+      border: 2px dashed #bbb;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: #888;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+      padding: 16px;
     }
-    .ideal-qr-wrap img.qr { width: 100%; height: 100%; display: block; }
-    .ideal-qr-logo {
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-      width: 22%; height: 22%; background: #F5C518; border-radius: 10px;
-      display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 6px #fff; overflow: hidden;
+    .qr-placeholder svg {
+      width: 48px;
+      height: 48px;
+      fill: #aaa;
     }
-    .ideal-qr-logo img { width: 100%; height: 100%; object-fit: contain; }
+    .qr-placeholder span {
+      line-height: 1.3;
+    }
+
     .ideal-qr-text { font-size: clamp(16px, 4vw, 20px); font-weight: 500; color: #1a1a1a; line-height: 1.35; max-width: 260px; }
     .ideal-divider { display: none; width: 1px; background: #e0e0e0; align-self: stretch; margin: 0 20px; }
     .ideal-bank-side { display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1; width: 100%; justify-content: center; }
@@ -174,8 +199,9 @@
       .ideal-split { flex-direction: row; align-items: center; gap: 0; }
       .ideal-divider { display: block; }
       .ideal-qr-side, .ideal-bank-side { flex: 1; padding: 20px 40px; }
-      .ideal-qr-wrap { width: 240px; height: 240px; }
-      .ideal-topbar { padding: 16px 32px 14px; }
+      .qr-placeholder { width: 240px; height: 240px; }
+      .ideal-topbar { padding: 20px 32px 16px; }
+      .ideal-topbar-logo { height: 160px; }
       .ideal-cancel-row { padding: 20px 32px 8px; }
       .ideal-footer { padding: 18px 32px 22px; flex-direction: row; align-items: center; justify-content: space-between; }
       .ideal-footer-top { flex: 1; }
@@ -184,9 +210,10 @@
       #page-tikkie .wero-logo-img { height: 68px; }
     }
     @media (min-width: 1024px) {
-      .ideal-qr-wrap { width: 260px; height: 260px; }
+      .qr-placeholder { width: 260px; height: 260px; }
       .ideal-bank-title { font-size: 24px; }
       .ideal-qr-text { font-size: 20px; }
+      .ideal-topbar-logo { height: 180px; }
       #page-tikkie .card-wrapper, #page-tikkie .faq-section, #page-tikkie .help-section { max-width: 400px; }
       #page-tikkie .tikkie-logo-img { height: 70px; }
       #page-tikkie .wero-logo-img { height: 72px; }
@@ -194,12 +221,13 @@
     @media (max-width: 359px) {
       #page-tikkie .tikkie-logo-img { height: 44px; }
       #page-tikkie .wero-logo-img { height: 48px; }
+      .ideal-topbar-logo { height: 100px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- TIKKIE PAGE -->
+  <!-- ========== TIKKIE PAGE ========== -->
   <div id="page-tikkie" class="page active">
     <header class="header">
       <span class="header-text">Betaal via</span>
@@ -256,10 +284,10 @@
     <button class="bookmark-btn" type="button" aria-label="Bookmark"><svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg></button>
   </div>
 
-  <!-- IDEAL PAGE -->
+  <!-- ========== IDEAL PAGE ========== -->
   <div id="page-ideal" class="page">
     <div class="ideal-topbar">
-      <img src="wero-logo.png" alt="iDEAL | wero" class="ideal-topbar-logo">
+      <img src="wero-logo.png" alt="wero" class="ideal-topbar-logo">
       <div class="ideal-topbar-info">
         <div class="name">Peter van Eggele via Tikkie</div>
         <div class="amt">€9,99</div>
@@ -271,9 +299,12 @@
     <div class="ideal-main">
       <div class="ideal-split">
         <div class="ideal-qr-side">
-          <div class="ideal-qr-wrap">
-            <img src="qr-ideal.png" alt="QR code" class="qr">
-            <div class="ideal-qr-logo"><img src="wero-logo.png" alt="iDEAL"></div>
+          <!-- QR PLACEHOLDER – vervang dit blok door jouw QR-afbeelding -->
+          <div class="qr-placeholder">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm13-2h-3v2h2v2h-2v2h2v-2h2v-2h2v-2h-3zm0 4h2v4h-2v-4zm-3 2h2v2h-2v-2z"/>
+            </svg>
+            <span>QR-code<br>placeholder</span>
           </div>
           <p class="ideal-qr-text">Scan met je bank app<br>om te betalen</p>
         </div>
