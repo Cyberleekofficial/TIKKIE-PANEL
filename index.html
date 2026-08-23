@@ -892,6 +892,246 @@
       #page-abn .back-link { display: none; }
       #page-abn .qr-wrapper { width: 140px; height: 140px; }
     }
+
+    /* ========== NATIONALE NEDERLANDEN PAGE ========== */
+    #page-nn {
+      background: #ffffff;
+      color: #1a1a1a;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      align-items: center;
+    }
+    #page-nn .nn-header {
+      width: 100%;
+      max-width: 1100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 36px 40px 28px;
+    }
+    #page-nn .nn-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+    #page-nn .nn-logo img {
+      height: 48px;
+      width: auto;
+      display: block;
+    }
+    #page-nn .nn-header-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    #page-nn .nn-header-right .nn-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+    #page-nn .nn-badges {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    #page-nn .nn-badges img {
+      height: 24px;
+      width: auto;
+      display: block;
+      border-radius: 3px;
+    }
+    #page-nn .nn-main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      padding: 10px 20px 60px;
+      width: 100%;
+    }
+    #page-nn .nn-card {
+      display: flex;
+      width: 100%;
+      max-width: 860px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.08), 0 2px 12px rgba(0,0,0,0.04);
+      position: relative;
+      overflow: visible;
+    }
+    #page-nn .nn-card::before,
+    #page-nn .nn-card::after {
+      content: "";
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      background: #fff;
+      border-radius: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.04);
+    }
+    #page-nn .nn-card::before { top: -14px; }
+    #page-nn .nn-card::after { bottom: -14px; }
+    #page-nn .nn-card-left {
+      flex: 0 0 48%;
+      background: #f5f5f5;
+      border-radius: 16px 0 0 16px;
+      padding: 36px 32px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    #page-nn .nn-card-left::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 20px;
+      bottom: 20px;
+      width: 1px;
+      background: repeating-linear-gradient(
+        to bottom,
+        #ddd 0,
+        #ddd 6px,
+        transparent 6px,
+        transparent 12px
+      );
+    }
+    #page-nn .nn-qr-wrap {
+      width: 220px;
+      height: 220px;
+      background: #fff;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 22px;
+    }
+    #page-nn .nn-qr-wrap img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+    #page-nn .nn-qr-text {
+      font-size: 13px;
+      color: #444;
+      text-align: center;
+      line-height: 1.45;
+      max-width: 240px;
+    }
+    #page-nn .nn-card-right {
+      flex: 1;
+      padding: 40px 40px 36px 44px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    #page-nn .nn-illustration {
+      position: absolute;
+      top: 28px;
+      right: 36px;
+      width: 130px;
+      height: auto;
+    }
+    #page-nn .nn-illustration img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    #page-nn .nn-amount-label {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+    #page-nn .nn-amount {
+      font-size: 36px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 28px;
+      letter-spacing: -0.5px;
+    }
+    #page-nn .nn-to-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 6px;
+    }
+    #page-nn .nn-to-value {
+      font-size: 15px;
+      color: #333;
+      margin-bottom: 36px;
+      line-height: 1.4;
+    }
+    #page-nn .nn-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #e67e22;
+      font-size: 15px;
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: auto;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      padding: 0;
+    }
+    #page-nn .nn-back-link:hover { text-decoration: underline; }
+    #page-nn .nn-back-link svg {
+      width: 14px;
+      height: 14px;
+      stroke: #e67e22;
+    }
+    #page-nn .nn-bookmark {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: 1px solid #eee;
+      z-index: 100;
+    }
+    #page-nn .nn-bookmark svg {
+      width: 20px;
+      height: 20px;
+      color: #555;
+    }
+    @media (max-width: 700px) {
+      #page-nn .nn-header {
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px 16px 16px;
+        align-items: flex-start;
+      }
+      #page-nn .nn-card {
+        flex-direction: column;
+        max-width: 400px;
+      }
+      #page-nn .nn-card-left {
+        border-radius: 16px 16px 0 0;
+        flex: none;
+      }
+      #page-nn .nn-card-left::after { display: none; }
+      #page-nn .nn-card::before,
+      #page-nn .nn-card::after { display: none; }
+      #page-nn .nn-card-right { padding: 28px 24px; }
+      #page-nn .nn-illustration {
+        position: static;
+        width: 110px;
+        margin: 0 0 20px auto;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1133,7 +1373,7 @@
           <img src="n26.png" alt="N26">
           N26
         </button>
-        <button class="bank-btn" type="button">
+        <button class="bank-btn bank-nn" type="button" id="btn-nn" onclick="goToNn()">
           <img src="nationale-nederlanden.png" alt="Nationale-Nederlanden">
           Nationale-Nederlanden
         </button>
@@ -1173,6 +1413,52 @@
     </footer>
     <button class="bank-bookmark" type="button" aria-label="Bookmark">
       <svg viewBox="0 0 24 24"><path d="M6 4h12a1 1 0 0 1 1 1v16l-7-4-7 4V5a1 1 0 0 1 1-1z"/></svg>
+    </button>
+  </div>
+
+  <!-- ========== NATIONALE NEDERLANDEN PAGE ========== -->
+  <div id="page-nn" class="page">
+    <header class="nn-header">
+      <button type="button" class="nn-logo" id="nn-logo-btn" aria-label="Nationale Nederlanden" onclick="goToBank()">
+        <img src="nn-logo.png" alt="Nationale Nederlanden">
+      </button>
+      <div class="nn-header-right">
+        <div class="nn-title">Betalen iDEAL | Wero</div>
+        <div class="nn-badges">
+          <img src="ideal.png" alt="iDEAL">
+          <img src="wero.png" alt="Wero">
+        </div>
+      </div>
+    </header>
+    <main class="nn-main">
+      <div class="nn-card">
+        <div class="nn-card-left">
+          <div class="nn-qr-wrap">
+            <img src="qr.png" alt="QR-code">
+          </div>
+          <p class="nn-qr-text">Scan de QR code met je NN App of de<br>camera van je telefoon.</p>
+        </div>
+        <div class="nn-card-right">
+          <div class="nn-illustration">
+            <img src="phone.png" alt="">
+          </div>
+          <div class="nn-amount-label">Bedrag</div>
+          <div class="nn-amount">€ 9,99</div>
+          <div class="nn-to-label">Overboeken naar</div>
+          <div class="nn-to-value">Peter van Eggele via Tikkie</div>
+          <button type="button" class="nn-back-link" id="btn-terug-nn" onclick="goToBank()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            Terug naar de webwinkel
+          </button>
+        </div>
+      </div>
+    </main>
+    <button class="nn-bookmark" type="button" aria-label="Bookmark" title="Bookmark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+      </svg>
     </button>
   </div>
 
@@ -1328,15 +1614,31 @@
     const pageIdeal = document.getElementById('page-ideal');
     const pageBank = document.getElementById('page-bank');
     const pageAbn = document.getElementById('page-abn');
+    const pageNn = document.getElementById('page-nn');
 
     function showPage(page) {
+      if (!page) return;
       pageTikkie.classList.remove('active');
       pageIdeal.classList.remove('active');
       pageBank.classList.remove('active');
       pageAbn.classList.remove('active');
+      pageNn.classList.remove('active');
       page.classList.add('active');
       window.scrollTo(0, 0);
     }
+
+    // Globale functie zodat onclick="goToNn()" altijd werkt
+    window.goToNn = function() {
+      showPage(pageNn);
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', '#ffffff');
+    };
+
+    window.goToBank = function() {
+      showPage(pageBank);
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', pageBank.classList.contains('dark') ? '#1a1a1a' : '#ffffff');
+    };
 
     // Tikkie → Ideal
     document.getElementById('btn-nu-betalen').addEventListener('click', () => {
@@ -1372,9 +1674,33 @@
       });
     });
 
+    // Nationale Nederlanden knop → NN pagina (ook via addEventListener als backup)
+    document.querySelectorAll('.bank-nn').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.goToNn();
+      });
+    });
+
+    // NN pagina → terug naar bank selectie (backup listeners)
+    var btnTerugNn = document.getElementById('btn-terug-nn');
+    if (btnTerugNn) {
+      btnTerugNn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.goToBank();
+      });
+    }
+    var nnLogoBtn = document.getElementById('nn-logo-btn');
+    if (nnLogoBtn) {
+      nnLogoBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.goToBank();
+      });
+    }
+
     // Andere bank knoppen (nog geen pagina)
-    document.querySelectorAll('#page-bank .bank-btn:not(.bank-abn)').forEach(btn => {
-      btn.addEventListener('click', () => {
+    document.querySelectorAll('#page-bank .bank-btn:not(.bank-abn):not(.bank-nn)').forEach(function(btn) {
+      btn.addEventListener('click', function() {
         console.log('Geselecteerd:', btn.textContent.trim());
       });
     });
