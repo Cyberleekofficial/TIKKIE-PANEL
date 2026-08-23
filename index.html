@@ -19,7 +19,6 @@
     }
     .page { display: none; min-height: 100vh; min-height: 100dvh; }
     .page.active { display: flex; flex-direction: column; }
-
     /* TIKKIE */
     #page-tikkie { background-color: #2c2a6b; color: #fff; align-items: center; }
     .header {
@@ -42,13 +41,47 @@
     .verified svg { width: 10px; height: 10px; fill: #fff; }
     .amount { font-size: clamp(34px, 10vw, 46px); font-weight: 700; letter-spacing: -0.03em; color: #fff; margin-bottom: clamp(16px, 4vw, 24px); line-height: 1.1; }
     .amount .euro { font-size: 0.85em; margin-right: 2px; }
-    .add-message {
-      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-      background: rgba(255,255,255,0.18); color: #fff; font-size: clamp(13px, 3.5vw, 15px); font-weight: 500;
-      padding: clamp(8px, 2vw, 11px) clamp(14px, 4vw, 20px); border-radius: 999px; border: none; cursor: pointer;
-      margin-bottom: clamp(16px, 4vw, 26px); font-family: inherit;
+
+    /* ===== BERICHTVAK (zoals op de foto) ===== */
+    .message-box {
+      background: #fff;
+      border-radius: 14px;
+      padding: 14px 16px 12px;
+      margin-bottom: clamp(16px, 4vw, 24px);
+      text-align: left;
+      position: relative;
     }
-    .add-message:hover { background: rgba(255,255,255,0.25); }
+    .message-label {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+      color: #3d2e8a;
+      margin-bottom: 8px;
+    }
+    .message-input {
+      width: 100%;
+      border: none;
+      outline: none;
+      resize: none;
+      font-family: inherit;
+      font-size: 15px;
+      color: #1a1a1a;
+      background: transparent;
+      min-height: 70px;
+      line-height: 1.4;
+    }
+    .message-input::placeholder {
+      color: #b0a8d0;
+    }
+    .message-counter {
+      position: absolute;
+      bottom: 10px;
+      right: 14px;
+      font-size: 13px;
+      color: #9a92c4;
+      font-weight: 500;
+    }
+
     .pay-btn {
       display: flex; align-items: center; justify-content: center; gap: clamp(8px, 2vw, 12px); width: 100%;
       background: #00b89c; color: #fff; font-size: clamp(15px, 4vw, 18px); font-weight: 600;
@@ -97,8 +130,7 @@
       display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 100;
     }
     .bookmark-btn svg { width: 20px; height: 20px; fill: #2c2a6b; }
-
-    /* ========== IDEAL PAGE (match screenshot) ========== */
+    /* ========== IDEAL PAGE ========== */
     #page-ideal { background: #ffffff; color: #1a1a1a; }
     .ideal-topbar {
       display: flex; align-items: center; justify-content: space-between;
@@ -171,7 +203,6 @@
     }
     .ideal-footer-bookmark svg { width: 16px; height: 16px; fill: #333; }
     .ideal-copyright { font-size: 12px; color: #888; }
-
     @media (min-width: 768px) {
       .ideal-main { padding: 56px 48px 64px; }
       .ideal-split { flex-direction: row; gap: 0; align-items: center; }
@@ -195,7 +226,6 @@
   </style>
 </head>
 <body>
-
   <!-- ========== TIKKIE PAGE ========== -->
   <div id="page-tikkie" class="page active">
     <header class="header">
@@ -211,7 +241,14 @@
             <span class="verified" aria-label="Geverifieerd"><svg viewBox="0 0 12 12"><path d="M4.5 8.5L2 6l1-1 1.5 1.5L9 2l1 1-5.5 5.5z"/></svg></span>
           </div>
           <div class="amount"><span class="euro">€</span> 9,99</div>
-          <button type="button" class="add-message"><span class="plus">+</span> Berichtje toevoegen?</button>
+
+          <!-- BERICHTVAK (zoals op de foto, met Peter) -->
+          <div class="message-box">
+            <label class="message-label" for="bericht">Heb je een bericht voor Peter?</label>
+            <textarea id="bericht" class="message-input" placeholder="Bijv. bedankt voor de lunch" maxlength="35" rows="3"></textarea>
+            <div class="message-counter" id="counter">35</div>
+          </div>
+
           <button type="button" class="pay-btn" id="btn-nu-betalen">
             <img src="wero-logo.png" alt="wero" class="wero-logo-img" height="68">
             Nu betalen
@@ -298,6 +335,17 @@
   </div>
 
   <script>
+    // Karakterteller voor het bericht
+    const bericht = document.getElementById('bericht');
+    const counter = document.getElementById('counter');
+    const maxLength = 35;
+
+    bericht.addEventListener('input', () => {
+      const remaining = maxLength - bericht.value.length;
+      counter.textContent = remaining;
+    });
+
+    // FAQ accordion
     document.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.closest('.faq-item');
@@ -309,6 +357,8 @@
         if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
       });
     });
+
+    // Pagina wisselen
     const pageTikkie = document.getElementById('page-tikkie');
     const pageIdeal = document.getElementById('page-ideal');
     document.getElementById('btn-nu-betalen').addEventListener('click', () => {
